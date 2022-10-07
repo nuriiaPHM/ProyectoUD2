@@ -8,6 +8,7 @@ module com.example.proyectoud1 {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires com.almasb.fxgl.all;
+    requires com.fasterxml.jackson.annotation;
 
     opens com.example.proyectoud1 to javafx.fxml;
     exports com.example.proyectoud1;
