@@ -14,7 +14,7 @@
         <children>
             <Label layoutX="14.0" layoutY="17.0" text="Film:"/>
             <TextField fx:id="title" layoutX="62.0" layoutY="13.0"/>
-            <Button fx:id="search" layoutX="237.0" layoutY="13.0" onAction="#onHelloButtonClick" text="Search"/>
+            <Button fx:id="search" layoutX="237.0" layoutY="13.0" onAction="#searchFilm" text="Search"/>
         </children>
     </AnchorPane>
     <AnchorPane prefHeight="200.0" prefWidth="200.0">

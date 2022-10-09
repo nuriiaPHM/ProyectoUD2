@@ -12,11 +12,5 @@ public class Response{
 		return response;
 	}
 
-	@Override
- 	public String toString(){
-		return 
-			"Response{" + 
-			"response = '" + response + '\'' + 
-			"}";
-		}
+
 }

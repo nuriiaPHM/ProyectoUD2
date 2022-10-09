@@ -9,6 +9,7 @@ module com.example.proyectoud1 {
     requires org.kordamp.ikonli.javafx;
     requires com.almasb.fxgl.all;
     requires com.fasterxml.jackson.annotation;
+    requires com.fasterxml.jackson.databind;
 
     opens com.example.proyectoud1 to javafx.fxml;
     exports com.example.proyectoud1;
