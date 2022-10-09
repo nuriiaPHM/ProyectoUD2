@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Response{
 
 	@JsonProperty("Response")
-	private List<Locations> response;
+	private List<Film> response;
 
-	public List<Locations> getResponse(){
+	public List<Film> getResponse(){
 		return response;
 	}
 
