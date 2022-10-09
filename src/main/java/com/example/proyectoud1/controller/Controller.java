@@ -11,11 +11,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
+import java.util.List;
 
 public class Controller {
     private String finalURL = "https://ghibliapi.herokuapp.com/films?title=";
+
     @FXML
     private TextField title;
     @FXML
@@ -35,10 +39,10 @@ public class Controller {
             URL jsonURL = new URL(finalURL + title.getText());
 
             ObjectMapper objectMapper = new ObjectMapper();
-
             Response response = objectMapper.readValue(jsonURL, Response.class);
             response.getResponse().stream().forEach(System.out::println);
             Film film = response.getResponse().get(0);
+            oTitle.setText(String.valueOf(film.getOriginalTitle()));
             rTitle.setText(String.valueOf(film.getOriginalTitleRomanised()));
             year.setText(String.valueOf(film.getReleaseDate()));
             Image banner = new Image(film.getMovieBanner(), true);
@@ -48,4 +52,5 @@ public class Controller {
         }
 
     }
+
 }
