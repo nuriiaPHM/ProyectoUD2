@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("mainview.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("films.fxml"));
         stage.setTitle("Studio Ghibli");
         stage.setScene(new Scene(root, 343, 389));
         stage.show();
