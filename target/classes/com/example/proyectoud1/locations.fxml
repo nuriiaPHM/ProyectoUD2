@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.LocationController">>
+    <children>
+        <Label layoutX="40.0" layoutY="39.0" text="Location:"/>
+        <TextField fx:id="locName" layoutX="109.0" layoutY="35.0"/>
+        <Button fx:id="locSearch" layoutX="286.0" layoutY="35.0" mnemonicParsing="false" onAction="#searchLocation" text="Search"/>
+        <TableView fx:id="locTable" layoutX="37.0" layoutY="98.0" prefHeight="187.0" prefWidth="357.0">
+            <columns>
+                <TableColumn fx:id="locTFilm" prefWidth="133.0" text="Film"/>
+                <TableColumn fx:id="locTClimate" prefWidth="65.0" text="Climate"/>
+                <TableColumn fx:id="locTTerrain" prefWidth="74.0" text="Terrain"/>
+                <TableColumn fx:id="locTWater" prefWidth="84.0" text="WaterSurface"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
