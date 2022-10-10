@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -31,6 +32,8 @@ public class Controller {
     private Label year;
     @FXML
     private ImageView image;
+    @FXML
+    private TextArea description;
 
     @FXML
     public void searchFilm(ActionEvent actionEvent) {
@@ -56,6 +59,7 @@ public class Controller {
             year.setText(String.valueOf(film.getReleaseDate()));
             Image banner = new Image(film.getMovieBanner(), true);
             image.setImage(banner);
+            description.setText(film.getDescription());
         } catch (IOException e) {
             e.printStackTrace();
         }
