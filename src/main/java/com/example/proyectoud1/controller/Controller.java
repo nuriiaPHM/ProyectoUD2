@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
-public class Controller{
+public class Controller {
     private String finalURL = "https://ghibliapi.herokuapp.com/films?title=";
 
     @FXML
@@ -34,18 +34,29 @@ public class Controller{
     @FXML
     public void searchFilm(ActionEvent actionEvent) {
         try {
-            URL jsonURL = new URL(finalURL + title.getText());
+            String cadena = "";
+            for(int i = 0; i < title.getText().length(); i++){
+                if(title.getText().charAt(i) == ' '){
+                    cadena += "%20";
+                } else {
+                    cadena += title.getText().charAt(i);
+                }
+            }
+
+            URL jsonURL = new URL(finalURL + cadena);
 
             ObjectMapper objectMapper = new ObjectMapper();
 
             //Response response = objectMapper.readValue(jsonURL, Response.class);
-            List<Film> myObjects = objectMapper.readValue(jsonURL, new TypeReference<List<Film>>(){});
-            Film film =myObjects.get(0);
+            List<Film> myObjects = objectMapper.readValue(jsonURL, new TypeReference<List<Film>>() {
+            });
+            Film film = myObjects.get(0);
             oTitle.setText(String.valueOf(film.getOriginalTitle()));
             rTitle.setText(String.valueOf(film.getOriginalTitleRomanised()));
             year.setText(String.valueOf(film.getReleaseDate()));
             Image banner = new Image(film.getMovieBanner(), true);
-            image.setImage(banner);        } catch (IOException e) {
+            image.setImage(banner);
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
