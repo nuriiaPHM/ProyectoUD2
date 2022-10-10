@@ -13,6 +13,10 @@ module com.example.proyectoud1 {
 
     opens com.example.proyectoud1 to javafx.fxml;
     exports com.example.proyectoud1;
+
+    exports com.example.proyectoud1.model;
+    opens com.example.proyectoud1.model;
+
     exports com.example.proyectoud1.controller;
     opens com.example.proyectoud1.controller to javafx.fxml;
 }
