@@ -4,18 +4,18 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="462.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.FilmController">
+<AnchorPane prefHeight="462.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.FilmController">
     <children>
         <Label layoutX="90.0" layoutY="33.0" text="Film:" />
         <TextField fx:id="filmTitle" layoutX="138.0" layoutY="29.0" />
         <Button fx:id="filmSearch" layoutX="313.0" layoutY="29.0" onAction="#searchFilm" text="Search" />
         <TableView fx:id="filmTable" layoutX="16.0" layoutY="73.0" prefHeight="122.0" prefWidth="420.0">
          <columns>
-            <TableColumn fx:id="oTitle" prefWidth="75.0" text="Original Title" />
-            <TableColumn fx:id="rTitle" prefWidth="75.0" text="Romanised Title" />
-            <TableColumn fx:id="year" prefWidth="75.0" text="Release Year" />
+            <TableColumn fx:id="oTitle" prefWidth="130.0" text="Original Title" />
+            <TableColumn fx:id="rTitle" prefWidth="147.0" text="Romanised Title" />
+            <TableColumn fx:id="year" prefWidth="142.0" text="Release Year" />
          </columns></TableView>
         <ImageView fx:id="image" fitHeight="242.0" fitWidth="414.0" layoutX="21.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnFilmsGoBack" layoutX="383.0" layoutY="29.0" mnemonicParsing="false" text="Go Back" />
     </children>
 </AnchorPane>

@@ -26,6 +26,7 @@ import java.util.ResourceBundle;
 
 public class FilmController implements Initializable {
 
+    public Button btnFilmsGoBack;
     private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
     private String peopleURL = "https://ghibliapi.herokuapp.com/people?name=";
     private String locationURL = "https://ghibliapi.herokuapp.com/locations?name=";
@@ -97,11 +98,15 @@ public class FilmController implements Initializable {
             e.printStackTrace();
         }
     }
-/*
-    public static void closeWindows(){
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("film.fxml"));
 
+    public void closeWindows(){
+        try {
+
+            FXMLLoader loader = new FXMLLoader(FilmController.class.getResource("com.example.proyectoud1.main.fxml"));
+
+            Parent root = loader.load();
+
+            MainController mainController = loader.getController();
 
             Scene scene = new Scene(root);
             Stage stage = new Stage();
@@ -109,18 +114,13 @@ public class FilmController implements Initializable {
             stage.setScene(scene);
             stage.show();
 
-            stage.setOnCloseRequest(e -> FilmController.closeWindows);
-            Stage myStage = (Stage) this.btnFilmsScreen.getScene().getWindow();
+            Stage myStage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
             myStage.close();
 
 
-            stage.setTitle("Studio Ghibli");
-            stage.setScene(new Scene(root, 379, 164));
-            stage.show();
         } catch (IOException e) {
 
         }
     };
-*/
 
 }
