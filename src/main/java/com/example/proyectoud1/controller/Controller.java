@@ -12,6 +12,7 @@ public abstract class Controller {
     }
 
     public void setStage(Stage stage) {
-        this.stage = stage;
+            this.stage = stage;
+
     }
 }

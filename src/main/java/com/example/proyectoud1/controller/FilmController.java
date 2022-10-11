@@ -76,31 +76,38 @@ public class FilmController extends Controller implements Initializable {
     @FXML
     public void searchFilm(ActionEvent actionEvent) {
         try {
-            String cadena = "";
-            for(int i = 0; i < filmTitle.getText().length(); i++){
-                if(filmTitle.getText().charAt(i) == ' '){
-                    cadena += "%20";
-                } else {
-                    cadena += filmTitle.getText().charAt(i);
+            if(!filmTitle.getText().isEmpty()) {
+                String cadena = "";
+                for (int i = 0; i < filmTitle.getText().length(); i++) {
+                    if (filmTitle.getText().charAt(i) == ' ') {
+                        cadena += "%20";
+                    } else {
+                        cadena += filmTitle.getText().charAt(i);
+                    }
                 }
+                URL jsonURL = new URL(filmURL + cadena);
+
+                ObjectMapper objectMapper = new ObjectMapper();
+                List<Film> films = objectMapper.readValue(jsonURL, new TypeReference<List<Film>>() {
+                });
+
+                Film film = films.get(0);
+
+                tableFilms.add(film);
+                this.filmTable.setItems(tableFilms);
+
+                Image banner = new Image(film.getMovieBanner(), true);
+                image.setImage(banner);
+            }else{
+                filmTitle.setText("Introducir nombre");
             }
-            URL jsonURL = new URL(filmURL + cadena);
-
-            ObjectMapper objectMapper = new ObjectMapper();
-            List<Film> films = objectMapper.readValue(jsonURL, new TypeReference<List<Film>>() {});
-            Film film = films.get(0);
-
-            tableFilms.add(film);
-            this.filmTable.setItems(tableFilms);
-
-            Image banner = new Image(film.getMovieBanner(), true);
-            image.setImage(banner);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void closeWindows(){
+
+    public void goBack(ActionEvent actionEvent){
         try {
 
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
@@ -109,18 +116,17 @@ public class FilmController extends Controller implements Initializable {
 
             MainController mainController = loader.getController();
 
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root,379, 164);
 
             stage.setScene(scene);
             stage.show();
 
-            stage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
-            stage.close();
+            Stage myStage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
 
 
         } catch (IOException e) {
-
+            System.out.println(e.getMessage());
         }
-    };
+    }
 
 }

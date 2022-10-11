@@ -32,9 +32,8 @@ public class MainController extends Controller {
             stage.setScene(scene);
             stage.show();
 
-            stage.setOnCloseRequest(e -> filmController.closeWindows());
-            stage = (Stage) this.btnFilmsScreen.getScene().getWindow();
-            stage.close();
+
+            Stage myStage = (Stage) this.btnFilmsScreen.getScene().getWindow();
 
 
         } catch (IOException e) {
