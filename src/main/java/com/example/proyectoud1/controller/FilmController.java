@@ -1,5 +1,6 @@
 package com.example.proyectoud1.controller;
 
+import com.example.proyectoud1.Main;
 import com.example.proyectoud1.model.Film;
 import com.example.proyectoud1.model.Location;
 import com.example.proyectoud1.model.People;
@@ -24,8 +25,9 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class FilmController implements Initializable {
+public class FilmController extends Controller implements Initializable {
 
+    public Button btnFilmsGoBack;
     private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
     private String peopleURL = "https://ghibliapi.herokuapp.com/people?name=";
     private String locationURL = "https://ghibliapi.herokuapp.com/locations?name=";
@@ -97,30 +99,28 @@ public class FilmController implements Initializable {
             e.printStackTrace();
         }
     }
-/*
-    public static void closeWindows(){
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("film.fxml"));
 
+    public void closeWindows(){
+        try {
+
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
+
+            Parent root = loader.load();
+
+            MainController mainController = loader.getController();
 
             Scene scene = new Scene(root);
-            Stage stage = new Stage();
 
             stage.setScene(scene);
             stage.show();
 
-            stage.setOnCloseRequest(e -> FilmController.closeWindows);
-            Stage myStage = (Stage) this.btnFilmsScreen.getScene().getWindow();
-            myStage.close();
+            stage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
+            stage.close();
 
 
-            stage.setTitle("Studio Ghibli");
-            stage.setScene(new Scene(root, 379, 164));
-            stage.show();
         } catch (IOException e) {
 
         }
     };
-*/
 
 }
