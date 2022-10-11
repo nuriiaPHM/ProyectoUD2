@@ -1,5 +1,6 @@
 package com.example.proyectoud1.controller;
 
+import com.example.proyectoud1.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +12,7 @@ import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
 
 import java.io.IOException;
 
-public class MainController {
+public class MainController extends Controller {
     public Button btnCharactersScreen;
     public Button btnFilmsScreen;
     public Button btnLocationScreen;
@@ -19,21 +20,21 @@ public class MainController {
     public void sFilm(ActionEvent actionEvent) {
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("com.example.proyectoud1.films.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("films.fxml"));
 
             Parent root = loader.load();
 
             FilmController filmController = loader.getController();
 
             Scene scene = new Scene(root);
-            Stage stage = new Stage();
+
 
             stage.setScene(scene);
             stage.show();
 
             stage.setOnCloseRequest(e -> filmController.closeWindows());
-            Stage myStage = (Stage) this.btnFilmsScreen.getScene().getWindow();
-            myStage.close();
+            stage = (Stage) this.btnFilmsScreen.getScene().getWindow();
+            stage.close();
 
 
         } catch (IOException e) {

@@ -1,5 +1,6 @@
 package com.example.proyectoud1.controller;
 
+import com.example.proyectoud1.Main;
 import com.example.proyectoud1.model.Film;
 import com.example.proyectoud1.model.Location;
 import com.example.proyectoud1.model.People;
@@ -24,7 +25,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class FilmController implements Initializable {
+public class FilmController extends Controller implements Initializable {
 
     public Button btnFilmsGoBack;
     private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
@@ -102,20 +103,19 @@ public class FilmController implements Initializable {
     public void closeWindows(){
         try {
 
-            FXMLLoader loader = new FXMLLoader(FilmController.class.getResource("com.example.proyectoud1.main.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
 
             Parent root = loader.load();
 
             MainController mainController = loader.getController();
 
             Scene scene = new Scene(root);
-            Stage stage = new Stage();
 
             stage.setScene(scene);
             stage.show();
 
-            Stage myStage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
-            myStage.close();
+            stage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
+            stage.close();
 
 
         } catch (IOException e) {
