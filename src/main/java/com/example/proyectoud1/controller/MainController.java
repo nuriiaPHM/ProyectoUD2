@@ -4,6 +4,7 @@ import com.example.proyectoud1.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,14 +20,13 @@ public class MainController extends Controller {
     @FXML
     public void sFilm(ActionEvent actionEvent) {
         try {
-
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("films.fxml"));
 
-            Parent root = loader.load();
 
             FilmController filmController = loader.getController();
 
-            Scene scene = new Scene(root);
+            setScene(loader);
 
 
             stage.setScene(scene);
@@ -36,7 +36,7 @@ public class MainController extends Controller {
             Stage myStage = (Stage) this.btnFilmsScreen.getScene().getWindow();
 
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }

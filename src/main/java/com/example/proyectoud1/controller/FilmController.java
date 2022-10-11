@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -19,6 +20,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 import java.net.URL;
@@ -105,26 +107,39 @@ public class FilmController extends Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
+    public void cerrarVentana(){
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("films.fxml"));
+            FilmController filmController = loader.getController();
+            Parent ro = loader.load();
+            Scene sceneClose  = new Scene(ro);
+            Stage stageClose = stage;
+            stageClose.setScene(sceneClose);
+            stageClose.close();
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
 
     public void goBack(ActionEvent actionEvent){
         try {
-
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
 
-            Parent root = loader.load();
 
             MainController mainController = loader.getController();
 
-            Scene scene = new Scene(root,379, 164);
+            setScene(loader);
 
             stage.setScene(scene);
             stage.show();
 
+
+
             Stage myStage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
 
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
