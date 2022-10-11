@@ -16,6 +16,6 @@
             <TableColumn fx:id="year" prefWidth="142.0" text="Release Year" />
          </columns></TableView>
         <ImageView fx:id="image" fitHeight="242.0" fitWidth="414.0" layoutX="21.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="btnFilmsGoBack" layoutX="383.0" layoutY="29.0" mnemonicParsing="false" text="Go Back" />
+      <Button fx:id="btnFilmsGoBack" layoutX="383.0" layoutY="29.0" mnemonicParsing="false" onAction="#goBack" text="Go Back" />
     </children>
 </AnchorPane>
