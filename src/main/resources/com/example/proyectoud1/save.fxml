@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="252.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.SaveController">
+   <children>
+      <Label layoutX="135.0" layoutY="78.0" prefHeight="17.0" prefWidth="203.0" text="Insert name of the file to save" />
+      <TextField fx:id="txtSave" layoutX="142.0" layoutY="120.0" />
+      <Button fx:id="btnSave" layoutX="191.0" layoutY="172.0" mnemonicParsing="false" onAction="#save" text="Save" />
+   </children>
+</AnchorPane>

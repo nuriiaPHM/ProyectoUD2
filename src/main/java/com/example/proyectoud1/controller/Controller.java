@@ -7,9 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Stack;
 
-public abstract class Controller {
+public class Controller {
     protected Stage stage = new Stage();
     protected Parent root = new Parent() {
     };
@@ -32,5 +33,8 @@ public abstract class Controller {
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
+    }
+    public String getResults(){
+     return "";
     }
 }
