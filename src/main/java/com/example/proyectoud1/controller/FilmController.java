@@ -22,8 +22,12 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -103,6 +107,8 @@ public class FilmController extends Controller implements Initializable {
             }else{
                 filmTitle.setText("Introducir nombre");
             }
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -142,6 +148,50 @@ public class FilmController extends Controller implements Initializable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void saveResulst(ActionEvent actionEvent) {
+
+        try {
+            SaveController saveController = new SaveController(new FilmController(),getResults());
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
+
+
+
+            saveController = loader.getController();
+            setScene(loader);
+
+            stage.setScene(scene);
+            stage.show();
+
+
+
+            Stage myStage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
+
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+    @Override
+    public String getResults(){
+
+        String results = "[";
+        for(int i = 0; i < tableFilms.size(); i++) {
+            results+="\n\t{";
+            results +="\n\t\ttitle:" +tableFilms.get(i).getTitle();
+            results +="\n\t\toriginal_title:" +tableFilms.get(i).getOriginalTitle();
+            results +="\n\t\toriginal_title_romanised:" +tableFilms.get(i).getOriginalTitleRomanised();
+            results +="\n\t\trelase_date:" +tableFilms.get(i).getReleaseDate();
+            results +="\n\t\timage:" +tableFilms.get(i).getImage();
+            results += "\n\t}";
+        }
+        results += "]";
+
+        System.out.println(results);
+        return results;
     }
 
 }

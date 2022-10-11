@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainController extends Controller {
     public Button btnCharactersScreen;
@@ -40,6 +41,7 @@ public class MainController extends Controller {
             System.out.println(e.getMessage());
         }
     }
+
 /*
     public void sPeople(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("film.fxml"));
