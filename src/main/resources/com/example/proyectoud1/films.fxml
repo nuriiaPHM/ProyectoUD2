@@ -4,7 +4,8 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="462.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.FilmController">
+<AnchorPane prefHeight="462.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.FilmController">
     <children>
         <Label layoutX="21.0" layoutY="28.0" text="Film:" />
         <TextField fx:id="filmTitle" layoutX="69.0" layoutY="24.0" />

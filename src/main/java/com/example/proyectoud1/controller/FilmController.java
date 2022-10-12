@@ -2,8 +2,6 @@ package com.example.proyectoud1.controller;
 
 import com.example.proyectoud1.Main;
 import com.example.proyectoud1.model.Film;
-import com.example.proyectoud1.model.Location;
-import com.example.proyectoud1.model.People;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;
@@ -13,49 +11,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.stage.Window;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class FilmController extends Controller implements Initializable {
-
-    public Button btnFilmsGoBack;
     private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
-    private String peopleURL = "https://ghibliapi.herokuapp.com/people?name=";
-    private String locationURL = "https://ghibliapi.herokuapp.com/locations?name=";
 
-
-    @FXML
-    public Button peopleSearch;
-    @FXML
-    public TextField peopleName;
-    @FXML
-    public TableView peopleTable;
-    @FXML
-    public TableColumn peopleTFilm;
-    @FXML
-    public TableColumn peopleTAge;
-    @FXML
-    public TableColumn peopleTGender;
-    @FXML
-    public TableColumn peopleTHair;
     @FXML
     public TableView filmTable;
-
     @FXML
     private TextField filmTitle;
     @FXML
@@ -68,6 +38,10 @@ public class FilmController extends Controller implements Initializable {
     private TableColumn year;
     @FXML
     private ImageView image;
+    @FXML
+    public Button btnFilmsGoBack;
+    @FXML
+    public Button btnSaveTable;
 
     private ObservableList<Film> tableFilms;
     @Override
@@ -108,22 +82,8 @@ public class FilmController extends Controller implements Initializable {
                 filmTitle.setText("Introducir nombre");
             }
 
-
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-    public void cerrarVentana(){
-        try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("films.fxml"));
-            FilmController filmController = loader.getController();
-            Parent ro = loader.load();
-            Scene sceneClose  = new Scene(ro);
-            Stage stageClose = stage;
-            stageClose.setScene(sceneClose);
-            stageClose.close();
-        }catch (IOException e){
-            System.out.println(e.getMessage());
         }
     }
 
@@ -132,18 +92,15 @@ public class FilmController extends Controller implements Initializable {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
 
-
             MainController mainController = loader.getController();
 
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Studio Ghibli");
             stage.show();
 
-
-
             Stage myStage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
-
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -153,29 +110,25 @@ public class FilmController extends Controller implements Initializable {
     public void saveResulst(ActionEvent actionEvent) {
 
         try {
-            SaveController saveController = new SaveController(new FilmController(),getResults());
+
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
+            SaveController saveController = new SaveController(loader.getController(),getResults());
 
-
-
-            saveController = loader.getController();
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Save");
             stage.show();
 
-
-
-            Stage myStage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
-
+            Stage myStage = (Stage) this.btnSaveTable.getScene().getWindow();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
     }
-    @Override
+
     public String getResults(){
 
         String results = "[";
@@ -188,7 +141,7 @@ public class FilmController extends Controller implements Initializable {
             results +="\n\t\timage:" +tableFilms.get(i).getImage();
             results += "\n\t}";
         }
-        results += "]";
+        results += "\n]";
 
         System.out.println(results);
         return results;

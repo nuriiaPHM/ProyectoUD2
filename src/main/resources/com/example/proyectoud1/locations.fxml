@@ -17,5 +17,7 @@
                 <TableColumn fx:id="locTWater" prefWidth="84.0" text="WaterSurface"/>
             </columns>
         </TableView>
+        <Button fx:id="btnLocBack" layoutX="335.0" layoutY="22.0" mnemonicParsing="false" onAction="#locGoBack" text="Go Back" />
+        <Button fx:id="btnLocSave" layoutX="345.0" layoutY="56.0" mnemonicParsing="false" onAction="#locSave" text="Save" />
     </children>
 </AnchorPane>
