@@ -1,8 +1,6 @@
 package com.example.proyectoud1.controller;
 
 import com.example.proyectoud1.Main;
-import com.example.proyectoud1.model.Film;
-import com.example.proyectoud1.model.Location;
 import com.example.proyectoud1.model.People;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,8 +16,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
