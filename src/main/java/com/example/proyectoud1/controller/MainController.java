@@ -18,43 +18,64 @@ public class MainController extends Controller {
     public Button btnCharactersScreen;
     public Button btnFilmsScreen;
     public Button btnLocationScreen;
+
     @FXML
     public void sFilm(ActionEvent actionEvent) {
         try {
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("films.fxml"));
-
 
             FilmController filmController = loader.getController();
 
             setScene(loader);
 
-
             stage.setScene(scene);
             stage.show();
 
-
             Stage myStage = (Stage) this.btnFilmsScreen.getScene().getWindow();
-
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-/*
-    public void sPeople(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("film.fxml"));
-        stage.setTitle("Studio Ghibli");
-        stage.setScene(new Scene(root, 379, 164));
-        stage.show();
+
+    public void sPeople(ActionEvent actionEvent) {
+        try {
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("people.fxml"));
+
+            PeopleController peopleController = loader.getController();
+
+            setScene(loader);
+
+            stage.setScene(scene);
+            stage.show();
+
+            Stage myStage = (Stage) this.btnCharactersScreen.getScene().getWindow();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-    public void sLocation(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("film.fxml"));
-        stage.setTitle("Studio Ghibli");
-        stage.setScene(new Scene(root, 379, 164));
-        stage.show();
-    }*/
+    public void sLocation(ActionEvent actionEvent) {
+        try {
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("locations.fxml"));
+
+            LocationController locationController = loader.getController();
+
+            setScene(loader);
+
+            stage.setScene(scene);
+            stage.show();
+
+            Stage myStage = (Stage) this.btnLocationScreen.getScene().getWindow();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
 }

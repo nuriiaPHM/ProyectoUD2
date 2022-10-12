@@ -1,14 +1,11 @@
 package com.example.proyectoud1.controller;
 
-import com.example.proyectoud1.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Stack;
 
 public class Controller {
     protected Stage stage = new Stage();
@@ -34,7 +31,5 @@ public class Controller {
             System.out.println(e.getMessage());
         }
     }
-    public String getResults(){
-     return "";
-    }
+
 }
