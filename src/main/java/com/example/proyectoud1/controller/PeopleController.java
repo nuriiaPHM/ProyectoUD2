@@ -59,6 +59,10 @@ public class PeopleController extends Controller implements Initializable {
 
     }
 
+    /**
+     *
+     * @param actionEvent The clic in the button
+     */
     @FXML
     public void peopleSearch(ActionEvent actionEvent) {
         try {
@@ -85,6 +89,10 @@ public class PeopleController extends Controller implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent The clic in the button
+     */
     public void peopleGoBack(ActionEvent actionEvent){
         try {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
@@ -106,6 +114,10 @@ public class PeopleController extends Controller implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent The clic in the button
+     */
     public void peopleSave(ActionEvent actionEvent) {
 
         try {

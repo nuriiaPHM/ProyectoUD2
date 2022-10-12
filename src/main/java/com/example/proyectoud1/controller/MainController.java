@@ -13,6 +13,10 @@ public class MainController extends Controller {
     public Button btnFilmsScreen;
     public Button btnLocationScreen;
 
+    /**
+     *
+     * @param actionEvent The clic in the button
+     */
     @FXML
     public void sFilm(ActionEvent actionEvent) {
         try {
@@ -34,7 +38,10 @@ public class MainController extends Controller {
         }
     }
 
-
+    /**
+     *
+     * @param actionEvent The clic in the button
+     */
     public void sPeople(ActionEvent actionEvent) {
         try {
             ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
@@ -55,6 +62,10 @@ public class MainController extends Controller {
         }
     }
 
+    /**
+     *
+     * @param actionEvent The clic in the button
+     */
     public void sLocation(ActionEvent actionEvent) {
         try {
             ((Node) (actionEvent.getSource())).getScene().getWindow().hide();

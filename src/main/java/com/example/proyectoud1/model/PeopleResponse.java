@@ -8,6 +8,10 @@ public class PeopleResponse{
 	@JsonProperty("PeopleResponse")
 	private List<People> peopleResponse;
 
+	/**
+	 *
+	 * Returns a List of People
+	 */
 	public List<People> getPeopleResponse(){
 		return peopleResponse;
 	}

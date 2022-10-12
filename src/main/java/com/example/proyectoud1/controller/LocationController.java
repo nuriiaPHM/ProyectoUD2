@@ -47,6 +47,12 @@ public class LocationController extends Controller implements Initializable {
     @FXML
     public Button btnLocSave;
     private ObservableList<Location> tableLocation;
+
+    /**
+     *
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tableLocation = FXCollections.observableArrayList();
@@ -57,6 +63,10 @@ public class LocationController extends Controller implements Initializable {
 
     }
 
+    /**
+     *  To search the location's name in the API
+     * @param actionEvent The clic in the button
+     */
     @FXML
     public void searchLocation(ActionEvent actionEvent) {
         try {
@@ -84,6 +94,10 @@ public class LocationController extends Controller implements Initializable {
 
     }
 
+    /**
+     * To open again the Main Window
+     * @param actionEvent The clic in the button
+     */
     public void locGoBack(ActionEvent actionEvent){
         try {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
@@ -107,6 +121,10 @@ public class LocationController extends Controller implements Initializable {
         }
     }
 
+    /**
+     * To save the Locations that the user has searched
+     * @param actionEvent The clic in the button
+     */
     public void locSave(ActionEvent actionEvent) {
 
         try {
@@ -129,6 +147,10 @@ public class LocationController extends Controller implements Initializable {
 
     }
 
+    /**
+     * To get as string with the locations that the user has searched
+     * @return A String in written as a JSON of Films
+     */
     public String getResults(){
 
         String results = "[";

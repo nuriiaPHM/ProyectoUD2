@@ -21,6 +21,9 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Class that extrends of Controler
+ */
 public class FilmController extends Controller implements Initializable {
 
     private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
@@ -47,6 +50,12 @@ public class FilmController extends Controller implements Initializable {
     public Button btnSaveTable;
 
     private ObservableList<Film> tableFilms;
+
+    /**
+     *
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tableFilms = FXCollections.observableArrayList();
@@ -56,6 +65,11 @@ public class FilmController extends Controller implements Initializable {
         this.year.setCellValueFactory(new PropertyValueFactory("releaseDate"));
 
     }
+
+    /**
+     * To search the title in the API
+     * @param actionEvent The clic in the button 'filmSearch'
+     */
     @FXML
     public void searchFilm(ActionEvent actionEvent) {
         try {
@@ -90,6 +104,10 @@ public class FilmController extends Controller implements Initializable {
         }
     }
 
+    /**
+     * To open again the Main Window
+     * @param actionEvent The clic in the button 'btnFilmsGoBack'
+     */
     public void goBack(ActionEvent actionEvent){
         try {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
@@ -110,6 +128,10 @@ public class FilmController extends Controller implements Initializable {
         }
     }
 
+    /**
+     * To save the Films that the user has searched
+     * @param actionEvent The clic in the button 'btnSaveTable'
+     */
     public void saveResulst(ActionEvent actionEvent) {
 
         try {
@@ -132,6 +154,10 @@ public class FilmController extends Controller implements Initializable {
 
     }
 
+    /**
+     * To get as string with the films that the user has searched
+     * @return A String in written as a JSON of Films
+     */
     public String getResults(){
 
         String results = "[";
