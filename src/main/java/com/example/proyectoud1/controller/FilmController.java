@@ -22,14 +22,17 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class FilmController extends Controller implements Initializable {
+
     private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
 
-    @FXML
-    public TableView filmTable;
     @FXML
     private TextField filmTitle;
     @FXML
     private Button filmSearch;
+    @FXML
+    public TableView filmTable;
+    @FXML
+    public TableColumn colTitle;
     @FXML
     private TableColumn oTitle;
     @FXML
@@ -47,7 +50,7 @@ public class FilmController extends Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tableFilms = FXCollections.observableArrayList();
-
+        this.colTitle.setCellValueFactory(new PropertyValueFactory("title"));
         this.oTitle.setCellValueFactory(new PropertyValueFactory("originalTitle"));
         this.rTitle.setCellValueFactory(new PropertyValueFactory("originalTitleRomanised"));
         this.year.setCellValueFactory(new PropertyValueFactory("releaseDate"));

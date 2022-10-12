@@ -39,6 +39,8 @@ public class PeopleController extends Controller implements Initializable {
     @FXML
     private TableView peopleTable;
     @FXML
+    public TableColumn peopleTName;
+    @FXML
     private TableColumn peopleTAge;
     @FXML
     private TableColumn peopleTGender;
@@ -50,7 +52,7 @@ public class PeopleController extends Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tablePeople = FXCollections.observableArrayList();
-
+        this.peopleTName.setCellValueFactory(new PropertyValueFactory("name"));
         this.peopleTAge.setCellValueFactory(new PropertyValueFactory("age"));
         this.peopleTGender.setCellValueFactory(new PropertyValueFactory("gender"));
         this.peopleTHair.setCellValueFactory(new PropertyValueFactory("hairColor"));

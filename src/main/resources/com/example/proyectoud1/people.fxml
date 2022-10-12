@@ -3,19 +3,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="338.0" prefWidth="311.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
+<AnchorPane prefHeight="303.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
     <children>
         <Button fx:id="peopleSearch" layoutX="235.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleSearch" text="Search" />
         <Label layoutX="24.0" layoutY="37.0" text="Name:" />
         <TextField fx:id="peopleName" layoutX="71.0" layoutY="33.0" />
-        <TableView fx:id="peopleTable" layoutX="22.0" layoutY="88.0" prefHeight="187.0" prefWidth="266.0">
+        <TableView fx:id="peopleTable" layoutX="22.0" layoutY="88.0" prefHeight="187.0" prefWidth="389.0">
             <columns>
-                <TableColumn fx:id="peopleTAge" prefWidth="71.0" text="Age" />
-                <TableColumn fx:id="peopleTGender" prefWidth="93.0" text="Gender" />
-                <TableColumn fx:id="peopleTHair" prefWidth="101.0" text="Hair Color" />
+            <TableColumn fx:id="peopleTName" prefWidth="119.0" text="Name" />
+                <TableColumn fx:id="peopleTAge" prefWidth="77.0" text="Age" />
+                <TableColumn fx:id="peopleTGender" prefWidth="97.0" text="Gender" />
+                <TableColumn fx:id="peopleTHair" prefWidth="94.0" text="Hair Color" />
             </columns>
         </TableView>
-      <Button fx:id="btnPeopleBack" layoutX="29.0" layoutY="293.0" mnemonicParsing="false" onAction="#peopleGoBack" text="Go Back" />
-      <Button fx:id="btnSavePeople" layoutX="241.0" layoutY="293.0" mnemonicParsing="false" onAction="#peopleSave" text="Save" />
+      <Button fx:id="btnPeopleBack" layoutX="298.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleGoBack" text="Go Back" />
+      <Button fx:id="btnSavePeople" layoutX="369.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleSave" text="Save" />
     </children>
 </AnchorPane>

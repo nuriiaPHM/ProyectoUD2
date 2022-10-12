@@ -31,13 +31,13 @@ public class LocationController extends Controller implements Initializable {
     @FXML
     public TableView locTable;
     @FXML
-    public TableColumn locTFilm;
-    @FXML
     public TableColumn locTClimate;
     @FXML
     public TableColumn locTTerrain;
     @FXML
     public TableColumn locTWater;
+    @FXML
+    public TableColumn locTName;
     @FXML
     public TextField locName;
     @FXML
@@ -50,7 +50,7 @@ public class LocationController extends Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tableLocation = FXCollections.observableArrayList();
-
+        this.locTName.setCellValueFactory(new PropertyValueFactory("name"));
         this.locTClimate.setCellValueFactory(new PropertyValueFactory("climate"));
         this.locTTerrain.setCellValueFactory(new PropertyValueFactory("terrain"));
         this.locTWater.setCellValueFactory(new PropertyValueFactory("surfaceWater"));
