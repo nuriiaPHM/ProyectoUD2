@@ -19,11 +19,20 @@ public class SaveController extends Controller {
     @FXML
     public Button btnSave;
 
+    /**
+     *
+     * @param controller
+     * @param results
+     */
     public SaveController(Controller controller, String results) {
         this.controller = controller;
         this.results = results;
     }
 
+    /**
+     *
+     * @param actionEvent The clic in the button 'btnSave'
+     */
     public void save(ActionEvent actionEvent) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(txtSave.getText() + ".txt"));

@@ -8,6 +8,10 @@ public class LocationResponse{
 	@JsonProperty("LocationResponse")
 	private List<Location> locationResponse;
 
+	/**
+	 *
+	 * @return Returns a List of Locations
+	 */
 	public List<Location> getLocationResponse(){
 		return locationResponse;
 	}
