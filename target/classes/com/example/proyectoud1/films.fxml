@@ -4,20 +4,19 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="462.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.FilmController">
+<AnchorPane prefHeight="475.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.FilmController">
     <children>
-        <Label layoutX="21.0" layoutY="28.0" text="Film:" />
-        <TextField fx:id="filmTitle" layoutX="69.0" layoutY="24.0" />
-        <Button fx:id="filmSearch" layoutX="244.0" layoutY="24.0" onAction="#searchFilm" text="Search" />
-        <TableView fx:id="filmTable" layoutX="16.0" layoutY="73.0" prefHeight="122.0" prefWidth="420.0">
+        <Label layoutX="63.0" layoutY="37.0" text="Film:" />
+        <TextField fx:id="filmTitle" layoutX="111.0" layoutY="33.0" />
+        <Button fx:id="filmSearch" layoutX="286.0" layoutY="33.0" onAction="#searchFilm" text="Search" />
+        <TableView fx:id="filmTable" layoutX="16.0" layoutY="73.0" prefHeight="122.0" prefWidth="366.0">
          <columns>
             <TableColumn fx:id="oTitle" prefWidth="130.0" text="Original Title" />
             <TableColumn fx:id="rTitle" prefWidth="147.0" text="Romanised Title" />
-            <TableColumn fx:id="year" prefWidth="142.0" text="Release Year" />
+            <TableColumn fx:id="year" prefWidth="88.0" text="Release Year" />
          </columns></TableView>
-        <ImageView fx:id="image" fitHeight="242.0" fitWidth="414.0" layoutX="21.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="btnFilmsGoBack" layoutX="314.0" layoutY="24.0" mnemonicParsing="false" onAction="#goBack" text="Go Back" />
-      <Button fx:id="btnSaveTable" layoutX="384.0" layoutY="24.0" mnemonicParsing="false" onAction="#saveResulst" text="Save" />
+        <ImageView fx:id="image" fitHeight="206.0" fitWidth="366.0" layoutX="17.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnFilmsGoBack" layoutX="58.0" layoutY="426.0" mnemonicParsing="false" onAction="#goBack" text="Go Back" />
+      <Button fx:id="btnSaveTable" layoutX="297.0" layoutY="426.0" mnemonicParsing="false" onAction="#saveResulst" text="Save" />
     </children>
 </AnchorPane>
