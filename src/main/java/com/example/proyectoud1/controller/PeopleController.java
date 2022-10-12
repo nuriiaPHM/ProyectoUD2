@@ -29,23 +29,21 @@ public class PeopleController extends Controller implements Initializable {
     private String peopleURL = "https://ghibliapi.herokuapp.com/people?name=";
 
     @FXML
-    public Button peopleSearch;
+    private Button peopleSearch;
     @FXML
-    public Button btnPeopleBack;
+    private Button btnPeopleBack;
     @FXML
-    public Button btnSavePeople;
+    private Button btnSavePeople;
     @FXML
-    public TextField peopleName;
+    private TextField peopleName;
     @FXML
-    public TableView peopleTable;
+    private TableView peopleTable;
     @FXML
-    public TableColumn peopleTFilm;
+    private TableColumn peopleTAge;
     @FXML
-    public TableColumn peopleTAge;
+    private TableColumn peopleTGender;
     @FXML
-    public TableColumn peopleTGender;
-    @FXML
-    public TableColumn peopleTHair;
+    private TableColumn peopleTHair;
 
     private ObservableList<People> tablePeople;
 
@@ -60,7 +58,7 @@ public class PeopleController extends Controller implements Initializable {
     }
 
     @FXML
-    public void searchPeople(ActionEvent actionEvent) {
+    public void peopleSearch(ActionEvent actionEvent) {
         try {
             String cadena = "";
             for (int i = 0; i < peopleName.getText().length(); i++) {
@@ -90,12 +88,12 @@ public class PeopleController extends Controller implements Initializable {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
 
-
             MainController mainController = loader.getController();
 
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Studio Ghibli");
             stage.show();
 
             Stage myStage = (Stage) this.btnPeopleBack.getScene().getWindow();
@@ -118,6 +116,7 @@ public class PeopleController extends Controller implements Initializable {
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Save");
             stage.show();
 
             Stage myStage = (Stage) this.btnSavePeople.getScene().getWindow();

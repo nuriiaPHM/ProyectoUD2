@@ -24,6 +24,7 @@ public class MainController extends Controller {
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Films");
             stage.show();
 
             Stage myStage = (Stage) this.btnFilmsScreen.getScene().getWindow();
@@ -44,6 +45,7 @@ public class MainController extends Controller {
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Characters");
             stage.show();
 
             Stage myStage = (Stage) this.btnCharactersScreen.getScene().getWindow();
@@ -63,6 +65,7 @@ public class MainController extends Controller {
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Locations");
             stage.show();
 
             Stage myStage = (Stage) this.btnLocationScreen.getScene().getWindow();

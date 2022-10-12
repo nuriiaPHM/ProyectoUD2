@@ -97,6 +97,7 @@ public class FilmController extends Controller implements Initializable {
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Studio Ghibli");
             stage.show();
 
             Stage myStage = (Stage) this.btnFilmsGoBack.getScene().getWindow();
@@ -117,6 +118,7 @@ public class FilmController extends Controller implements Initializable {
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Save");
             stage.show();
 
             Stage myStage = (Stage) this.btnSaveTable.getScene().getWindow();

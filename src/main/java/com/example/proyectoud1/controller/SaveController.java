@@ -9,7 +9,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class SaveController extends Controller{
+public class SaveController extends Controller {
 
     public Controller controller;
     public String results;
@@ -24,13 +24,18 @@ public class SaveController extends Controller{
         this.results = results;
     }
 
-    public void save(ActionEvent actionEvent) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(txtSave.getText() + ".txt"));
-        if (results == null) {
-            System.out.println("Vacio");
-        } else {
-            bw.write(results);
+    public void save(ActionEvent actionEvent) {
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(txtSave.getText() + ".txt"));
+            if (results == null) {
+                System.out.println("Vacio");
+            } else {
+                bw.write(results);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
+
     }
 
 }

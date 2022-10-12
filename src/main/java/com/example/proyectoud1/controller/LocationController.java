@@ -94,6 +94,7 @@ public class LocationController extends Controller implements Initializable {
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Studio Ghibli");
             stage.show();
 
 
@@ -117,6 +118,7 @@ public class LocationController extends Controller implements Initializable {
             setScene(loader);
 
             stage.setScene(scene);
+            stage.setTitle("Save");
             stage.show();
 
             Stage myStage = (Stage) this.btnLocSave.getScene().getWindow();
