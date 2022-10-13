@@ -37,6 +37,8 @@ El botón 'Go Back' nos llevará a la ventana de inicio, por si queremos cambiar
 
 El botón 'Save' abrirá otra ventana donde tendremos que introducir un nombre para el fichero en el que se guardarán los datos de las búsquedas que hemos hecho.
 
+![Save](https://user-images.githubusercontent.com/105040658/195648809-ded487e6-43f2-4fe6-9f22-6ebbe2d04197.PNG)
+
 
 REPARTO DE TAREAS:
 
