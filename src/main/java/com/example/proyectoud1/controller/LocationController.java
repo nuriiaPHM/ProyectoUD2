@@ -65,7 +65,7 @@ public class LocationController extends Controller implements Initializable {
 
     /**
      *  To search the location's name in the API
-     * @param actionEvent The clic in the button
+     * @param actionEvent The click in the button
      */
     @FXML
     public void searchLocation(ActionEvent actionEvent) {
@@ -96,7 +96,7 @@ public class LocationController extends Controller implements Initializable {
 
     /**
      * To open again the Main Window
-     * @param actionEvent The clic in the button
+     * @param actionEvent The click in the button
      */
     public void locGoBack(ActionEvent actionEvent){
         try {
@@ -123,16 +123,16 @@ public class LocationController extends Controller implements Initializable {
 
     /**
      * To save the Locations that the user has searched
-     * @param actionEvent The clic in the button
+     * @param actionEvent The click in the button
      */
     public void locSave(ActionEvent actionEvent) {
 
         try {
-            SaveController saveController = new SaveController(new FilmController(),getResults());
+
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
+            SaveController saveController = new SaveController(getResults());
 
-            saveController = loader.getController();
             setScene(loader);
 
             stage.setScene(scene);

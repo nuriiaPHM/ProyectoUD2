@@ -16,6 +16,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -26,8 +29,9 @@ import java.util.ResourceBundle;
  */
 public class FilmController extends Controller implements Initializable {
 
-    private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
 
+    private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
+    private String results = "No data to save";
     @FXML
     private TextField filmTitle;
     @FXML
@@ -48,6 +52,10 @@ public class FilmController extends Controller implements Initializable {
     public Button btnFilmsGoBack;
     @FXML
     public Button btnSaveTable;
+    @FXML
+    public Button btnSaveFilm;
+    @FXML
+    public TextField txtSaveFilm;
 
     private ObservableList<Film> tableFilms;
 
@@ -68,7 +76,7 @@ public class FilmController extends Controller implements Initializable {
 
     /**
      * To search the title in the API
-     * @param actionEvent The clic in the button 'filmSearch'
+     * @param actionEvent The click in the button 'filmSearch'
      */
     @FXML
     public void searchFilm(ActionEvent actionEvent) {
@@ -106,7 +114,7 @@ public class FilmController extends Controller implements Initializable {
 
     /**
      * To open again the Main Window
-     * @param actionEvent The clic in the button 'btnFilmsGoBack'
+     * @param actionEvent The click in the button 'btnFilmsGoBack'
      */
     public void goBack(ActionEvent actionEvent){
         try {
@@ -130,23 +138,24 @@ public class FilmController extends Controller implements Initializable {
 
     /**
      * To save the Films that the user has searched
-     * @param actionEvent The clic in the button 'btnSaveTable'
+     * @param actionEvent The click in the button 'btnSaveTable'
      */
     public void saveResulst(ActionEvent actionEvent) {
 
         try {
+            results = getResults();
 
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
-            SaveController saveController = new SaveController(loader.getController(),getResults());
+            //SaveController saveController = new SaveController(results);
 
             setScene(loader);
-
+            
             stage.setScene(scene);
             stage.setTitle("Save");
             stage.show();
 
-            Stage myStage = (Stage) this.btnSaveTable.getScene().getWindow();
+            Stage myStage = (Stage) this.btnSaveFilm.getScene().getWindow();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
