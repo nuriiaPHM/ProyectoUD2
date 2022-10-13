@@ -29,6 +29,10 @@ public class Location {
 	@JsonProperty("url")
 	private String url;
 
+	/**
+	 * Get de todos los atributos de locations
+	 *
+	 */
 	public List<String> getFilms(){
 		return films;
 	}

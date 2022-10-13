@@ -35,6 +35,10 @@ public class People {
 	@JsonProperty("gander")
 	private String gander;
 
+	/**
+	 * Gets of all People atributes
+	 *
+	 */
 	public List<String> getFilms(){
 		return films;
 	}

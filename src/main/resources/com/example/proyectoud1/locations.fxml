@@ -3,19 +3,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.LocationController">>
+<AnchorPane prefHeight="297.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.LocationController">
     <children>
-        <Label layoutX="40.0" layoutY="39.0" text="Location:"/>
-        <TextField fx:id="locName" layoutX="109.0" layoutY="35.0"/>
-        <Button fx:id="locSearch" layoutX="286.0" layoutY="35.0" mnemonicParsing="false" onAction="#searchLocation" text="Search"/>
-        <TableView fx:id="locTable" layoutX="37.0" layoutY="98.0" prefHeight="187.0" prefWidth="357.0">
+        <Button fx:id="locSearch" layoutX="235.0" layoutY="33.0" mnemonicParsing="false" onAction="#searchLocation" text="Search" />
+        <Label layoutX="24.0" layoutY="37.0" text="Name:" />
+        <TextField fx:id="locName" layoutX="71.0" layoutY="33.0" />
+        <TableView fx:id="locTable" layoutX="22.0" layoutY="88.0" prefHeight="187.0" prefWidth="411.0">
             <columns>
-                <TableColumn fx:id="locTFilm" prefWidth="133.0" text="Film"/>
-                <TableColumn fx:id="locTClimate" prefWidth="65.0" text="Climate"/>
-                <TableColumn fx:id="locTTerrain" prefWidth="74.0" text="Terrain"/>
-                <TableColumn fx:id="locTWater" prefWidth="84.0" text="WaterSurface"/>
+            <TableColumn fx:id="locTName" prefWidth="118.0" text="Name" />
+                <TableColumn fx:id="locTClimate" prefWidth="96.0" text="Climate" />
+                <TableColumn fx:id="locTTerrain" prefWidth="97.0" text="Terrain" />
+                <TableColumn fx:id="locTWater" prefWidth="98.0" text="Water Surface" />
             </columns>
         </TableView>
+        <Button fx:id="btnLocBack" layoutX="320.0" layoutY="33.0" mnemonicParsing="false" onAction="#locGoBack" text="Go Back" />
+        <Button fx:id="btnLocSave" layoutX="392.0" layoutY="33.0" mnemonicParsing="false" onAction="#locSave" text="Save" />
     </children>
 </AnchorPane>
