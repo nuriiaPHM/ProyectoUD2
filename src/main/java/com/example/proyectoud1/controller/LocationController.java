@@ -124,7 +124,7 @@ public class LocationController extends Controller implements Initializable {
 
         String results = getResults();
         System.out.println(results);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(txtLocSave.getText()+".txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(txtLocSave.getText()+".json"))) {
             writer.write(results);
         } catch (IOException e) {
             System.err.println(e.getMessage());
@@ -141,11 +141,15 @@ public class LocationController extends Controller implements Initializable {
         String results = "[";
         for(int i = 0; i < tableLocation.size(); i++) {
             results+="\n\t{";
-            results +="\n\t\tname:" +tableLocation.get(i).getName();
-            results +="\n\t\toriginal_title:" +tableLocation.get(i).getClimate();
-            results +="\n\t\toriginal_title_romanised:" +tableLocation.get(i).getTerrain();
-            results +="\n\t\trelase_date:" +tableLocation.get(i).getSurfaceWater();
-            results += "\n\t}";
+            results +="\n\t\t\"name\":\"" +tableLocation.get(i).getName() + "\",";
+            results +="\n\t\t\"original_title\":\"" +tableLocation.get(i).getClimate() + "\",";
+            results +="\n\t\t\"original_title_romanised\":\"" +tableLocation.get(i).getTerrain() + "\",";
+            results +="\n\t\t\"relase_date\":\"" +tableLocation.get(i).getSurfaceWater() + "\",";
+            if(i + 1 < tableLocation.size()){
+                results += "\n\t},";
+            } else {
+                results += "\n\t}";
+            }
         }
         results += "\n]";
 

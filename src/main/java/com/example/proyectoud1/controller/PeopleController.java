@@ -117,7 +117,7 @@ public class PeopleController extends Controller implements Initializable {
     public void peopleSave(ActionEvent actionEvent) {
         String results = getResults();
         System.out.println(results);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(txtSave.getText()+".txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(txtSave.getText()+".json"))) {
             writer.write(results);
         } catch (IOException e) {
             System.err.println(e.getMessage());
@@ -129,12 +129,16 @@ public class PeopleController extends Controller implements Initializable {
 
         String results = "[";
         for(int i = 0; i < tablePeople.size(); i++) {
-            results +="\n\t{";
-            results +="\n\t\tname:" +tablePeople.get(i).getName();
-            results +="\n\t\tage:" +tablePeople.get(i).getAge();
-            results +="\n\t\tgender:" +tablePeople.get(i).getGender();
-            results +="\n\t\thair color:" +tablePeople.get(i).getHairColor();
-            results += "\n\t}";
+            results += "\n\t{";
+            results += "\n\t\t\"name\":\"" +tablePeople.get(i).getName() + "\",";
+            results += "\n\t\t\"age\":\"" +tablePeople.get(i).getAge() + "\",";
+            results += "\n\t\t\"gender\":\"" +tablePeople.get(i).getGender() + "\",";
+            results += "\n\t\t\"hair color\":\"" +tablePeople.get(i).getHairColor() + "\"";
+            if(i + 1 < tablePeople.size()){
+                results += "\n\t},";
+            } else {
+                results += "\n\t}";
+            }
         }
         results += "\n]";
 
