@@ -19,7 +19,7 @@ Al iniciar el programa veremos esta pantalla donde podremos elegir sobre qué ca
 
 Cuando pulsamos los botones se abrirán las correspondientes ventanas de búsqueda.
 
-En la ventana Characters podemos introducir el nombre de un personaje y al pulsar el botón 'Search' nos mostrará la edad, el género y el color del pelo de ese personaje. En la tabla de abajo nos aparecerá una tabla con todas las búsquedas que hagamos.
+En la ventana Characters podemos seleccionar un género y al pulsar el botón 'Search' nos mostrará todos los personajes de ese género en la tabla de abajo, así como su nombre, edad y color de pelo.
 
 ![CharactersDatos](https://user-images.githubusercontent.com/105040658/195403701-9a920a84-ca1b-4345-b699-b2e98488e517.PNG)
 
