@@ -77,9 +77,15 @@ PEOPLE
 
 ![11_metodoSearchLC](https://user-images.githubusercontent.com/105040856/195915305-97654b36-e9a2-4029-9b74-c40a70691897.PNG)
 
+
+
 ![12_metodoGoBackLC](https://user-images.githubusercontent.com/105040856/195915328-2930c4c6-f65d-40c1-bb8c-43a6cd164ae3.PNG)
 
+Crea y devuelve un String a partir del contenido de tablePeople, que será el resultado de la búsqueda
+
 ![13_metodogetResultsLC](https://user-images.githubusercontent.com/105040856/195915348-a0fc3f16-7075-48c5-9adf-9852ca75a514.PNG)
+
+Genera un fichero .json a partir del String que obtenga del método getResults()
 
 ![13_metodoSaVeLC](https://user-images.githubusercontent.com/105040856/195915358-16b00627-2680-421b-8035-8efe8974a662.PNG)
 
@@ -106,5 +112,5 @@ OPINIÓN:
 Nuria: Bajo mi punto de vista este proyecto ha sido interesante, pero creo que nos hubiese venido bien alguna explicación previa más para agilizar el trabajo, ya que en muchas ocasiones nos atascamos porque no sabíamos como funcionaban ciertas clases o metodos que debíamos implementar.
 
 
-Uxía: En mi opinion el proyecto a venido bien para aprender algo sobre el Jackson y en algunos puntos si que me he quedado con ellos, pero en otros sigo muy confundida. También estoy de acuerdo con mi compañera de que hubiera estado bien una explicación sobre que se podía hacer con el Jackson y como se usa, para asi poder evitar algunos de los errores que nos dieron y nos pillaron por sorpresa, perdiendo horas, al no saber como arreglarlos, de desarrollo del programa y de poder hacer también los extras.
+Uxía: En mi opinión el proyecto ha venido bien para aprender algo sobre el Jackson y en algunos puntos si que me he quedado con ellos, pero en otros sigo muy confundida. También estoy de acuerdo con mi compañera de que hubiera estado bien una explicación sobre que se podía hacer con el Jackson y como se usa, para asi poder evitar algunos de los errores que nos dieron y nos pillaron por sorpresa, perdiendo horas, al no saber como arreglarlos, de desarrollo del programa y de poder hacer también los extras.
 
