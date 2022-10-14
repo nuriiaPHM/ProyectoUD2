@@ -25,12 +25,12 @@ import java.util.ResourceBundle;
 
 public class PeopleController extends Controller implements Initializable {
 
+    private String peopleURL = "https://ghibliapi.herokuapp.com/people?gender=";
+
     @FXML
     public TextField txtSave;
     @FXML
     public ComboBox cboxGender;
-    private String peopleURL = "https://ghibliapi.herokuapp.com/people?gender=";
-
     @FXML
     private Button peopleSearch;
     @FXML
@@ -77,9 +77,9 @@ public class PeopleController extends Controller implements Initializable {
             for(int i = 0; i < peoples.size(); i++){
                 People people = peoples.get(i);
                 tablePeople.add(people);
-                this.peopleTable.setItems(tablePeople);
-            }
 
+            }
+            this.peopleTable.setItems(tablePeople);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -104,7 +104,6 @@ public class PeopleController extends Controller implements Initializable {
             stage.show();
 
             Stage myStage = (Stage) this.btnPeopleBack.getScene().getWindow();
-
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

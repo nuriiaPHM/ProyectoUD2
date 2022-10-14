@@ -24,8 +24,6 @@ import java.util.ResourceBundle;
 
 public class LocationController extends Controller implements Initializable {
 
-    public TextField txtLocSave;
-    public ComboBox cboxTerrain;
     private String locationURL = "https://ghibliapi.herokuapp.com/locations?terrain=";
 
     @FXML
@@ -46,6 +44,11 @@ public class LocationController extends Controller implements Initializable {
     public Button btnLocBack;
     @FXML
     public Button btnLocSave;
+    @FXML
+    public TextField txtLocSave;
+    @FXML
+    public ComboBox cboxTerrain;
+
     private ObservableList<Location> tableLocation;
 
     /**
@@ -71,25 +74,18 @@ public class LocationController extends Controller implements Initializable {
     public void searchLocation(ActionEvent actionEvent) {
 
         try {
-            String cadena = "";
-            for(int i = 0; i < locName.getText().length(); i++){
-                if(locName.getText().charAt(i) == ' '){
-                    cadena += "%20";
-                } else {
-                    cadena += locName.getText().charAt(i);
-                }
-            }
+            tableLocation.remove(0,tableLocation.size());
 
-            URL jsonURL = new URL(locationURL + cadena);
+            URL jsonURL = new URL(locationURL + cboxTerrain.getValue());
 
             ObjectMapper objectMapper = new ObjectMapper();
             List<Location> locations = objectMapper.readValue(jsonURL, new TypeReference<List<Location>>() {});
             for(int i = 0; i < locations.size() ;i++) {
-                Location location = locations.get(0);
-
+                Location location = locations.get(i);
                 tableLocation.add(location);
-                this.locTable.setItems(tableLocation);
+
             }
+            this.locTable.setItems(tableLocation);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -113,10 +109,7 @@ public class LocationController extends Controller implements Initializable {
             stage.setTitle("Studio Ghibli");
             stage.show();
 
-
-
             Stage myStage = (Stage) this.btnLocBack.getScene().getWindow();
-
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

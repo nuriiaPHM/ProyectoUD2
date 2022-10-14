@@ -10,33 +10,7 @@ import javafx.stage.Stage;
 
 public class MainController extends Controller {
     public Button btnCharactersScreen;
-    public Button btnFilmsScreen;
     public Button btnLocationScreen;
-
-    /**
-     *
-     * @param actionEvent The click in the button
-     */
-    @FXML
-    public void sFilm(ActionEvent actionEvent) {
-        try {
-            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("films.fxml"));
-
-            FilmController filmController = loader.getController();
-
-            setScene(loader);
-
-            stage.setScene(scene);
-            stage.setTitle("Films");
-            stage.show();
-
-            Stage myStage = (Stage) this.btnFilmsScreen.getScene().getWindow();
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
 
     /**
      *

@@ -5,23 +5,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="359.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.LocationController">
+<AnchorPane prefHeight="346.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.LocationController">
     <children>
-        <Button fx:id="locSearch" layoutX="235.0" layoutY="33.0" mnemonicParsing="false" onAction="#searchLocation" text="Search" />
-        <Label layoutX="24.0" layoutY="37.0" text="Name:" />
-        <TableView fx:id="locTable" layoutX="22.0" layoutY="88.0" prefHeight="187.0" prefWidth="411.0">
+        <Button fx:id="locSearch" layoutX="265.0" layoutY="33.0" mnemonicParsing="false" onAction="#searchLocation" text="Search" />
+        <Label layoutX="38.0" layoutY="37.0" text="Terrain:" />
+        <TableView fx:id="locTable" layoutX="22.0" layoutY="88.0" prefHeight="187.0" prefWidth="493.0">
             <columns>
-            <TableColumn fx:id="locTName" prefWidth="118.0" text="Name" />
-                <TableColumn fx:id="locTClimate" prefWidth="96.0" text="Climate" />
-                <TableColumn fx:id="locTTerrain" prefWidth="97.0" text="Terrain" />
-                <TableColumn fx:id="locTWater" prefWidth="98.0" text="Water Surface" />
+            <TableColumn fx:id="locTName" prefWidth="182.0" text="Name" />
+                <TableColumn fx:id="locTClimate" prefWidth="113.0" text="Climate" />
+                <TableColumn fx:id="locTTerrain" prefWidth="105.0" text="Terrain" />
+                <TableColumn fx:id="locTWater" prefWidth="91.0" text="Water Surface" />
             </columns>
         </TableView>
-        <Button fx:id="btnLocBack" layoutX="320.0" layoutY="33.0" mnemonicParsing="false" onAction="#locGoBack" text="Go Back" />
-        <Button fx:id="btnLocSave" layoutX="360.0" layoutY="300.0" mnemonicParsing="false" onAction="#locSave" text="Save" />
-      <Label layoutX="23.0" layoutY="304.0" text="Insert name of file" />
-      <TextField fx:id="txtLocSave" layoutX="146.0" layoutY="300.0" />
-        <ComboBox fx:id="cboxTerrain" layoutX="71.0" layoutY="33.0" prefWidth="150.0">
+        <Button fx:id="btnLocBack" layoutX="437.0" layoutY="33.0" mnemonicParsing="false" onAction="#locGoBack" text="Go Back" />
+        <Button fx:id="btnLocSave" layoutX="389.0" layoutY="300.0" mnemonicParsing="false" onAction="#locSave" text="Save" />
+      <Label layoutX="71.0" layoutY="304.0" text="File name:" />
+      <TextField fx:id="txtLocSave" layoutX="146.0" layoutY="300.0" prefHeight="25.0" prefWidth="225.0" />
+        <ComboBox fx:id="cboxTerrain" layoutX="95.0" layoutY="33.0" prefWidth="150.0">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Mountain" />
