@@ -3,11 +3,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="297.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.LocationController">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="359.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.LocationController">
     <children>
         <Button fx:id="locSearch" layoutX="235.0" layoutY="33.0" mnemonicParsing="false" onAction="#searchLocation" text="Search" />
         <Label layoutX="24.0" layoutY="37.0" text="Name:" />
-        <TextField fx:id="locName" layoutX="71.0" layoutY="33.0" />
         <TableView fx:id="locTable" layoutX="22.0" layoutY="88.0" prefHeight="187.0" prefWidth="411.0">
             <columns>
             <TableColumn fx:id="locTName" prefWidth="118.0" text="Name" />
@@ -17,6 +18,24 @@
             </columns>
         </TableView>
         <Button fx:id="btnLocBack" layoutX="320.0" layoutY="33.0" mnemonicParsing="false" onAction="#locGoBack" text="Go Back" />
-        <Button fx:id="btnLocSave" layoutX="392.0" layoutY="33.0" mnemonicParsing="false" onAction="#locSave" text="Save" />
+        <Button fx:id="btnLocSave" layoutX="360.0" layoutY="300.0" mnemonicParsing="false" onAction="#locSave" text="Save" />
+      <Label layoutX="23.0" layoutY="304.0" text="Insert name of file" />
+      <TextField fx:id="txtLoc" layoutX="146.0" layoutY="300.0" />
+        <ComboBox fx:id="cboxTerrain" layoutX="71.0" layoutY="66.0" prefWidth="150.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Mountain" />
+                <String fx:value="Hill" />
+                <String fx:value="Plain" />
+                <String fx:value="Marsh" />
+                <String fx:value="TODO" />
+                <String fx:value="Forest" />
+                <String fx:value="City" />
+                <String fx:value="River" />
+                <String fx:value="Ocean" />
+            </FXCollections>
+        </items>
+
+    </ComboBox>
     </children>
 </AnchorPane>

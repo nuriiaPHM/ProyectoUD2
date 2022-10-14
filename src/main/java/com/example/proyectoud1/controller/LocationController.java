@@ -25,7 +25,6 @@ import java.util.ResourceBundle;
 
 public class LocationController extends Controller implements Initializable {
 
-    private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
     private String locationURL = "https://ghibliapi.herokuapp.com/locations?terrain=";
 
     @FXML
@@ -83,11 +82,12 @@ public class LocationController extends Controller implements Initializable {
 
             ObjectMapper objectMapper = new ObjectMapper();
             List<Location> locations = objectMapper.readValue(jsonURL, new TypeReference<List<Location>>() {});
-            Location location = locations.get(0);
+            for(int i = 0; i < locations.size() ;i++) {
+                Location location = locations.get(0);
 
-            tableLocation.add(location);
-            this.locTable.setItems(tableLocation);
-
+                tableLocation.add(location);
+                this.locTable.setItems(tableLocation);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
