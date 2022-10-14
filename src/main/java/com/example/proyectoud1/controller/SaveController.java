@@ -25,16 +25,30 @@ public class SaveController {
     public SaveController() {
     }
 
+    /**
+     * Constructor of class SaveController
+     * @param results String with the results of films in JSON structure
+     */
     public SaveController(String results) {
         this.results = results;
     }
 
-    public void save(ActionEvent actionEvent) throws IOException {
-        if(results == null){
-            System.out.println("Vacio");
-        }else {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(txtSave.getText()+".txt"));
-            bw.write(results);
+    /**
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
+    public void save(ActionEvent actionEvent) {
+        try {
+
+            if (results == null) {
+                System.out.println("Vacio");
+            } else {
+                BufferedWriter bw = new BufferedWriter(new FileWriter(txtSave.getText() + ".txt"));
+                bw.write(results);
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
         }
     }
 
