@@ -18,6 +18,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -127,22 +129,12 @@ public class LocationController extends Controller implements Initializable {
      */
     public void locSave(ActionEvent actionEvent) {
 
-        try {
-
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
-            //SaveController saveController = new SaveController(getResults());
-
-            setScene(loader);
-
-            stage.setScene(scene);
-            stage.setTitle("Save");
-            stage.show();
-
-            Stage myStage = (Stage) this.btnLocSave.getScene().getWindow();
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        String results = getResults();
+        System.out.println(results);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(locSave.getText()+".txt"))) {
+            writer.write(results);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
 
     }
@@ -152,7 +144,6 @@ public class LocationController extends Controller implements Initializable {
      * @return A String in written as a JSON of Films
      */
     public String getResults(){
-        results = getResults();
 
         String results = "[";
         for(int i = 0; i < tableLocation.size(); i++) {
