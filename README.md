@@ -35,14 +35,15 @@ En ambas ventanas nos encontraremos además con el botón 'Go Back', que nos lle
 
 MANUAL DE DESARROLADOR:
 
-Launcher
+LAUNCHER:
+
 La clase Launcher se usa para ejecutar la clase Main y poder generar un JAR sin problema
 
 ![1_launcher](https://user-images.githubusercontent.com/105040856/195914482-1dc6a25f-b6d8-419b-99f6-66f7ea49f00e.PNG)
 
 CONTROLLER
 
-La clase Controller se usa para qeu todas las otras clases controler esxtiendan de ella y se puda usar la misma Stage en todas las ventanas pero con distinto s Scene
+La clase Controller se usa para qeu todas las otras clases controler esxtiendan de ella y se puda usar la misma Stage en todas las ventanas pero con distintos Scene
 
 ![1 0](https://user-images.githubusercontent.com/105040856/195914358-bc647d75-4b69-47f1-9c62-b593969e253c.PNG)
 
