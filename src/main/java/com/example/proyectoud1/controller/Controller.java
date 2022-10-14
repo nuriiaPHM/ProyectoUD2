@@ -27,8 +27,8 @@ public class Controller {
     }
 
     /**
-     * Set the scene to Controler a Class
-     * @param fxmlLoader Select the class that wants to contoll
+     * Set the scene to Controller a Class
+     * @param fxmlLoader Select the class that wants to controller
      */
     public void setScene(FXMLLoader fxmlLoader) {
         try {

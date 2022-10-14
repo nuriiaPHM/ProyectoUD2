@@ -66,7 +66,7 @@ public class PeopleController extends Controller implements Initializable {
     }
 
     /**
-     * To search the gender in the API
+     * To search a gender in the API
      * @param actionEvent The click in the button
      */
     @FXML
@@ -116,7 +116,7 @@ public class PeopleController extends Controller implements Initializable {
     }
 
     /**
-     * To save the characters that the user has searched
+     * To save the characters that the user searched
      * @param actionEvent The click in the button
      */
     public void peopleSave(ActionEvent actionEvent) {
@@ -131,8 +131,8 @@ public class PeopleController extends Controller implements Initializable {
     }
 
     /**
-     * To get as string with the characters that the user has searched
-     * @return A String in written as a JSON of People
+     * To get as string with the characters that the user searched
+     * @return A String written as a JSON of People
      */
     public String getResults(){
 

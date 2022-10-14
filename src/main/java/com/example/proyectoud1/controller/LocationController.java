@@ -25,7 +25,11 @@ import java.util.ResourceBundle;
 public class LocationController extends Controller implements Initializable {
 
     private String locationURL = "https://ghibliapi.herokuapp.com/locations?terrain=";
+    private ObservableList<Location> tableLocation;
 
+    /**
+     * JavaFX elements from locations.fxml
+     */
     @FXML
     public TableView locTable;
     @FXML
@@ -48,8 +52,6 @@ public class LocationController extends Controller implements Initializable {
     public TextField txtLocSave;
     @FXML
     public ComboBox cboxTerrain;
-
-    private ObservableList<Location> tableLocation;
 
     /**
      * To set an attribute of locations in each column of the table

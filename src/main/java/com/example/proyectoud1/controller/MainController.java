@@ -13,7 +13,7 @@ public class MainController extends Controller {
     public Button btnLocationScreen;
 
     /**
-     * To search people
+     * Opens the Character searching window
      * @param actionEvent The click in the button
      */
     public void sPeople(ActionEvent actionEvent) {
@@ -37,7 +37,7 @@ public class MainController extends Controller {
     }
 
     /**
-     *To search Locations
+     * Opens the Location searching window
      * @param actionEvent The click in the button
      */
     public void sLocation(ActionEvent actionEvent) {

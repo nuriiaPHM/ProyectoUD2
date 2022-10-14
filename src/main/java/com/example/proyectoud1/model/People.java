@@ -4,7 +4,9 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class People {
-
+	/**
+	 * People class attributes
+	 */
 	@JsonProperty("films")
 	private List<String> films;
 
@@ -36,8 +38,7 @@ public class People {
 	private String gander;
 
 	/**
-	 * Gets of all People atributes
-	 *
+	 * Getter of People class attributes
 	 */
 	public List<String> getFilms(){
 		return films;

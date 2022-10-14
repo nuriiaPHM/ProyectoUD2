@@ -4,7 +4,9 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Location {
-
+	/**
+	 * Location class attributes
+	 */
 	@JsonProperty("films")
 	private List<String> films;
 
@@ -30,8 +32,7 @@ public class Location {
 	private String url;
 
 	/**
-	 * Get de todos los atributos de locations
-	 *
+	 * Getter of Location class attributes
 	 */
 	public List<String> getFilms(){
 		return films;
