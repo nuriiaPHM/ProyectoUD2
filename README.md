@@ -51,8 +51,8 @@ MEJORAS:
 Como posibles mejoras podríamos implementar alguna de las categorías que no hemos utilizado o añadir más filtros de búsqueda
 
 OPINIÓN:
-Nuria:
-Bajo mi punto de vista este proyecto ha sido interesante, pero creo que nos hubiese venido bien alguna explicación previa más para agilizar el trabajo, ya que en muchas ocasiones nos atascamos porque no sabíamos como funcionaban ciertas clases o metodos que debíamos implementar.
+
+Nuria: Bajo mi punto de vista este proyecto ha sido interesante, pero creo que nos hubiese venido bien alguna explicación previa más para agilizar el trabajo, ya que en muchas ocasiones nos atascamos porque no sabíamos como funcionaban ciertas clases o metodos que debíamos implementar.
 
 
 Uxía:
