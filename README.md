@@ -36,40 +36,49 @@ En ambas ventanas nos encontraremos además con el botón 'Go Back', que nos lle
 MANUAL DE DESARROLADOR:
 
 Launcher
+La clase Launcher se usa para ejecutar la clase Main y poder generar un JAR sin problema
 
 ![1_launcher](https://user-images.githubusercontent.com/105040856/195914482-1dc6a25f-b6d8-419b-99f6-66f7ea49f00e.PNG)
 
 CONTROLLER
+
+La clase Controller se usa para qeu todas las otras clases controler esxtiendan de ella y se puda usar la misma Stage en todas las ventanas pero con distinto s Scene
+
 ![1 0](https://user-images.githubusercontent.com/105040856/195914358-bc647d75-4b69-47f1-9c62-b593969e253c.PNG)
 
 MAIN
 
-
+En la clase Main empezamos en programa llamando a la vista main.fxml
 ![2_main](https://user-images.githubusercontent.com/105040856/195914594-a5e70ceb-82aa-4000-bcd7-88fccbf2c6b6.PNG)
 
-![3_mainview](https://user-images.githubusercontent.com/105040856/195914619-9ce7d80a-3525-48f6-9c4b-6c4ae1e8fdb5.PNG)
-
-![4_atributtesMain](https://user-images.githubusercontent.com/105040856/195914663-086c48a2-5652-43b1-8572-cd72f57a0453.PNG)
+Cuand se hace clic en el boton People se carga una nueva pantalla que se usa para buscar personajes
 
 ![5_metodoSearchP](https://user-images.githubusercontent.com/105040856/195914700-c16229a0-379c-4c17-a155-8c1ef10d9d9c.PNG)
+
+
+Cuand se hace clic en el boton Locations se carga una nueva pantalla que se usa para guardar ubicaciones de las peliculas
 
 ![6_metodoSearchL](https://user-images.githubusercontent.com/105040856/195914739-ad857406-6a51-411c-81c3-acad809cdca8.PNG)
 
 LOCATIONS
 
-![3_locview](https://user-images.githubusercontent.com/105040856/195915193-1def1296-edcc-43b2-b036-ee4e0a8e1779.PNG)
-
-![7_atributtesL](https://user-images.githubusercontent.com/105040856/195914862-236bf780-5fd8-4573-811f-2215bac65d1d.PNG)
-
-![7_atributtesLC_true](https://user-images.githubusercontent.com/105040856/195914892-148f7968-21e0-49c1-a17b-4a340b423f3c.PNG)
+Le indica a cada columna de la tabla de qué atributo de Locations tiene que obtener su valor una vez se añada un objeto a la tabla.
 
 ![10_internaliceLC_true](https://user-images.githubusercontent.com/105040856/195915014-8bc1c23c-7a30-4c4d-88aa-b22a95daf5d1.PNG)
 
+Genera una url para hacer una consulta a la API y mete los resultados en una lista para añadirlos a la tabla.
+
 ![11_metodoSearchLC_true](https://user-images.githubusercontent.com/105040856/195915029-601f9e3f-1e3c-44fc-bc41-70846fb4df16.PNG)
+
+Crea una nueva instancia del MainController, pasándole el controlador actual para que se pueda visualizar correctamente.
 
 ![12_metodoGoBackLC_true](https://user-images.githubusercontent.com/105040856/195915046-58a2e955-379a-4a1b-a559-027870699a01.PNG)
 
+Crea y devuelve un String a partir del contenido de tableLocation, que será el resultado de la búsqueda
+
 ![13_metodogetResultsLC_true](https://user-images.githubusercontent.com/105040856/195915064-3a84c3cf-5990-4e92-aab9-2dc9420c3fa1.PNG)
+
+Genera un fichero .json a partir del String que obtenga del método getResults()
 
 ![13_metodoSaVeLC_true](https://user-images.githubusercontent.com/105040856/195915085-ad996336-9766-42c3-8f5d-4caa19ff1a62.PNG)
 
