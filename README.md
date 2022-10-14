@@ -32,14 +32,18 @@ La ventana Locations funciona del mismo modo que Characters, tendremos que selec
 
 En ambas ventanas nos encontraremos además con el botón 'Go Back', que nos llevará de vuelta a la ventana de inicio por si queremos hacer otra búsqueda en otra categoría, y en la parte inferior tenemos un cuadro de texto en el que podremos introducir un nombre para el fichero donde, al pulsar el botón 'Save', se guardarán los datos de la última búsqueda que hayamos hecho en formato .json .
 
-MANUAL DE DESARROLADOR
+
+MANUAL DE DESARROLADOR:
+
 Launcher
+
 ![1_launcher](https://user-images.githubusercontent.com/105040856/195914482-1dc6a25f-b6d8-419b-99f6-66f7ea49f00e.PNG)
 
 CONTROLLER
 ![1 0](https://user-images.githubusercontent.com/105040856/195914358-bc647d75-4b69-47f1-9c62-b593969e253c.PNG)
 
 MAIN
+
 
 ![2_main](https://user-images.githubusercontent.com/105040856/195914594-a5e70ceb-82aa-4000-bcd7-88fccbf2c6b6.PNG)
 
@@ -51,7 +55,7 @@ MAIN
 
 ![6_metodoSearchL](https://user-images.githubusercontent.com/105040856/195914739-ad857406-6a51-411c-81c3-acad809cdca8.PNG)
 
-LOCARIONS
+LOCATIONS
 
 ![3_locview](https://user-images.githubusercontent.com/105040856/195915193-1def1296-edcc-43b2-b036-ee4e0a8e1779.PNG)
 
@@ -69,15 +73,17 @@ LOCARIONS
 
 ![13_metodoSaVeLC_true](https://user-images.githubusercontent.com/105040856/195915085-ad996336-9766-42c3-8f5d-4caa19ff1a62.PNG)
 
-PEOPLE
+PEOPLE:
 
-![9_peopleview](https://user-images.githubusercontent.com/105040856/195915256-a847f878-8250-4fd5-8898-c84e5b6f9a1a.PNG)
+Le indica a cada columna de la tabla de qué atributo de People tiene que obtener su valor una vez se añada un objeto a la tabla.
 
 ![10_internaliceLC](https://user-images.githubusercontent.com/105040856/195915281-3b2335ad-1110-4677-870c-267f40ce479d.PNG)
 
+Genera una url para hacer una consulta a la API y mete los resultados en una lista para añadirlos a la tabla.
+
 ![11_metodoSearchLC](https://user-images.githubusercontent.com/105040856/195915305-97654b36-e9a2-4029-9b74-c40a70691897.PNG)
 
-
+Crea una nueva instancia del MainController, pasándole el controlador actual para que se pueda visualizar correctamente.
 
 ![12_metodoGoBackLC](https://user-images.githubusercontent.com/105040856/195915328-2930c4c6-f65d-40c1-bb8c-43a6cd164ae3.PNG)
 
