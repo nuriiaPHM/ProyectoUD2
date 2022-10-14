@@ -142,7 +142,6 @@ public class FilmController extends Controller implements Initializable {
     public void saveResulst(ActionEvent actionEvent) {
 
         try {
-            results = getResults();
 
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
