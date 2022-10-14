@@ -17,6 +17,10 @@ public class Controller {
         return stage;
     }
 
+    /**
+     * To set a stage to the class
+     * @param stage : The Stage to set
+     */
     public void setStage(Stage stage) {
             this.stage = stage;
 

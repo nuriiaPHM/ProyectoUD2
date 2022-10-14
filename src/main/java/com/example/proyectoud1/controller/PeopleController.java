@@ -50,6 +50,11 @@ public class PeopleController extends Controller implements Initializable {
 
     private ObservableList<People> tablePeople;
 
+    /**
+     * To set an attribute of People in each column of the table
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tablePeople = FXCollections.observableArrayList();
@@ -61,7 +66,7 @@ public class PeopleController extends Controller implements Initializable {
     }
 
     /**
-     *
+     * To search the gender in the API
      * @param actionEvent The click in the button
      */
     @FXML
@@ -87,7 +92,7 @@ public class PeopleController extends Controller implements Initializable {
     }
 
     /**
-     *
+     * To open again the Main Window
      * @param actionEvent The click in the button
      */
     public void peopleGoBack(ActionEvent actionEvent){
@@ -111,7 +116,7 @@ public class PeopleController extends Controller implements Initializable {
     }
 
     /**
-     *
+     * To save the characters that the user has searched
      * @param actionEvent The click in the button
      */
     public void peopleSave(ActionEvent actionEvent) {
@@ -125,6 +130,10 @@ public class PeopleController extends Controller implements Initializable {
 
     }
 
+    /**
+     * To get as string with the characters that the user has searched
+     * @return A String in written as a JSON of People
+     */
     public String getResults(){
 
         String results = "[";

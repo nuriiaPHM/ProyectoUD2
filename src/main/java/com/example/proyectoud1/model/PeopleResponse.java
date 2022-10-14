@@ -9,7 +9,7 @@ public class PeopleResponse{
 	private List<People> peopleResponse;
 
 	/**
-	 *
+	 * To get a People list
 	 * Returns a List of People
 	 */
 	public List<People> getPeopleResponse(){

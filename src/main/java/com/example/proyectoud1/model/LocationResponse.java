@@ -9,7 +9,7 @@ public class LocationResponse{
 	private List<Location> locationResponse;
 
 	/**
-	 *
+	 * To gets the locations
 	 * @return Returns a List of Locations
 	 */
 	public List<Location> getLocationResponse(){

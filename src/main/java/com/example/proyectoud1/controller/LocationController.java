@@ -67,7 +67,7 @@ public class LocationController extends Controller implements Initializable {
     }
 
     /**
-     *  To search the location's name in the API
+     *  To search the terrain in the API
      * @param actionEvent The click in the button
      */
     @FXML
@@ -134,7 +134,7 @@ public class LocationController extends Controller implements Initializable {
 
     /**
      * To get as string with the locations that the user has searched
-     * @return A String in written as a JSON of Films
+     * @return A String in written as a JSON of Locations
      */
     public String getResults(){
 
