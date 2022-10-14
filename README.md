@@ -79,17 +79,21 @@ Le indica a cada columna de la tabla de qué atributo de People tiene que obtene
 
 ![10_internaliceLC](https://user-images.githubusercontent.com/105040856/195915281-3b2335ad-1110-4677-870c-267f40ce479d.PNG)
 
+
 Genera una url para hacer una consulta a la API y mete los resultados en una lista para añadirlos a la tabla.
 
 ![11_metodoSearchLC](https://user-images.githubusercontent.com/105040856/195915305-97654b36-e9a2-4029-9b74-c40a70691897.PNG)
+
 
 Crea una nueva instancia del MainController, pasándole el controlador actual para que se pueda visualizar correctamente.
 
 ![12_metodoGoBackLC](https://user-images.githubusercontent.com/105040856/195915328-2930c4c6-f65d-40c1-bb8c-43a6cd164ae3.PNG)
 
+
 Crea y devuelve un String a partir del contenido de tablePeople, que será el resultado de la búsqueda
 
 ![13_metodogetResultsLC](https://user-images.githubusercontent.com/105040856/195915348-a0fc3f16-7075-48c5-9adf-9852ca75a514.PNG)
+
 
 Genera un fichero .json a partir del String que obtenga del método getResults()
 
