@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="303.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
+<AnchorPane prefHeight="326.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
     <children>
-        <Button fx:id="peopleSearch" layoutX="235.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleSearch" text="Search" />
-        <Label layoutX="24.0" layoutY="37.0" text="Name:" />
-        <TextField fx:id="peopleName" layoutX="71.0" layoutY="33.0" />
-        <TableView fx:id="peopleTable" layoutX="22.0" layoutY="88.0" prefHeight="187.0" prefWidth="389.0">
+        <Button fx:id="peopleSearch" layoutX="249.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleSearch" text="Search" />
+        <Label layoutX="27.0" layoutY="37.0" text="Gender:" />
+      <ComboBox fx:id="cboxGender" layoutX="83.0" layoutY="33.0" prefWidth="150.0">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Male" />
+                  <String fx:value="Female" />
+              </FXCollections>
+          </items>
+
+      </ComboBox>
+        <TableView fx:id="peopleTable" layoutX="23.0" layoutY="75.0" prefHeight="187.0" prefWidth="389.0">
             <columns>
             <TableColumn fx:id="peopleTName" prefWidth="119.0" text="Name" />
                 <TableColumn fx:id="peopleTAge" prefWidth="77.0" text="Age" />
@@ -16,7 +26,9 @@
                 <TableColumn fx:id="peopleTHair" prefWidth="94.0" text="Hair Color" />
             </columns>
         </TableView>
-      <Button fx:id="btnPeopleBack" layoutX="298.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleGoBack" text="Go Back" />
-      <Button fx:id="btnSavePeople" layoutX="369.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleSave" text="Save" />
+      <Button fx:id="btnPeopleBack" layoutX="339.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleGoBack" text="Go Back" />
+      <Button fx:id="btnSavePeople" layoutX="349.0" layoutY="279.0" mnemonicParsing="false" onAction="#peopleSave" text="Save" />
+      <Label layoutX="44.0" layoutY="283.0" text="File name:" />
+      <TextField fx:id="txtSave" layoutX="120.0" layoutY="279.0" prefHeight="25.0" prefWidth="196.0" />
     </children>
 </AnchorPane>

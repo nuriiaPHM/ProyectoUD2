@@ -13,7 +13,6 @@ public class Controller {
     };
     protected Scene scene = new Scene(root);
 
-
     public Stage getStage() {
         return stage;
     }

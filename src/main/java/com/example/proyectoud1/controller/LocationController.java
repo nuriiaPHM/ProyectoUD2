@@ -11,13 +11,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -25,8 +24,9 @@ import java.util.ResourceBundle;
 
 public class LocationController extends Controller implements Initializable {
 
-    private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
-    private String locationURL = "https://ghibliapi.herokuapp.com/locations?name=";
+    public TextField txtLocSave;
+    public ComboBox cboxTerrain;
+    private String locationURL = "https://ghibliapi.herokuapp.com/locations?terrain=";
 
     @FXML
     public TableView locTable;
@@ -49,7 +49,7 @@ public class LocationController extends Controller implements Initializable {
     private ObservableList<Location> tableLocation;
 
     /**
-     *
+     * To set an attribute of locations in each column of the table
      * @param url
      * @param resourceBundle
      */
@@ -69,6 +69,7 @@ public class LocationController extends Controller implements Initializable {
      */
     @FXML
     public void searchLocation(ActionEvent actionEvent) {
+
         try {
             String cadena = "";
             for(int i = 0; i < locName.getText().length(); i++){
@@ -83,11 +84,12 @@ public class LocationController extends Controller implements Initializable {
 
             ObjectMapper objectMapper = new ObjectMapper();
             List<Location> locations = objectMapper.readValue(jsonURL, new TypeReference<List<Location>>() {});
-            Location location = locations.get(0);
+            for(int i = 0; i < locations.size() ;i++) {
+                Location location = locations.get(0);
 
-            tableLocation.add(location);
-            this.locTable.setItems(tableLocation);
-
+                tableLocation.add(location);
+                this.locTable.setItems(tableLocation);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -127,22 +129,12 @@ public class LocationController extends Controller implements Initializable {
      */
     public void locSave(ActionEvent actionEvent) {
 
-        try {
-
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
-            SaveController saveController = new SaveController(getResults());
-
-            setScene(loader);
-
-            stage.setScene(scene);
-            stage.setTitle("Save");
-            stage.show();
-
-            Stage myStage = (Stage) this.btnLocSave.getScene().getWindow();
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        String results = getResults();
+        System.out.println(results);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(txtLocSave.getText()+".txt"))) {
+            writer.write(results);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
 
     }

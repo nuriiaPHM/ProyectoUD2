@@ -31,7 +31,6 @@ public class FilmController extends Controller implements Initializable {
 
 
     private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
-    private String results = "No data to save";
     @FXML
     private TextField filmTitle;
     @FXML
@@ -60,7 +59,7 @@ public class FilmController extends Controller implements Initializable {
     private ObservableList<Film> tableFilms;
 
     /**
-     *
+     * To set an attribute of films in each column of the table
      * @param url
      * @param resourceBundle
      */
@@ -118,7 +117,7 @@ public class FilmController extends Controller implements Initializable {
      */
     public void goBack(ActionEvent actionEvent){
         try {
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            //((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
 
             MainController mainController = loader.getController();
@@ -143,11 +142,9 @@ public class FilmController extends Controller implements Initializable {
     public void saveResulst(ActionEvent actionEvent) {
 
         try {
-            results = getResults();
 
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
-            //SaveController saveController = new SaveController(results);
 
             setScene(loader);
             
@@ -158,7 +155,7 @@ public class FilmController extends Controller implements Initializable {
             Stage myStage = (Stage) this.btnSaveFilm.getScene().getWindow();
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
         }
 
     }

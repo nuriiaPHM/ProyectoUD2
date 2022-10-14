@@ -11,13 +11,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -25,8 +25,11 @@ import java.util.ResourceBundle;
 
 public class PeopleController extends Controller implements Initializable {
 
-    private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
-    private String peopleURL = "https://ghibliapi.herokuapp.com/people?name=";
+    @FXML
+    public TextField txtSave;
+    @FXML
+    public ComboBox cboxGender;
+    private String peopleURL = "https://ghibliapi.herokuapp.com/people?gender=";
 
     @FXML
     private Button peopleSearch;
@@ -34,8 +37,6 @@ public class PeopleController extends Controller implements Initializable {
     private Button btnPeopleBack;
     @FXML
     private Button btnSavePeople;
-    @FXML
-    private TextField peopleName;
     @FXML
     private TableView peopleTable;
     @FXML
@@ -66,23 +67,19 @@ public class PeopleController extends Controller implements Initializable {
     @FXML
     public void peopleSearch(ActionEvent actionEvent) {
         try {
-            String cadena = "";
-            for (int i = 0; i < peopleName.getText().length(); i++) {
-                if (peopleName.getText().charAt(i) == ' ') {
-                    cadena += "%20";
-                } else {
-                    cadena += peopleName.getText().charAt(i);
-                }
-            }
-            URL jsonURL = new URL(peopleURL + cadena);
+            tablePeople.remove(0,tablePeople.size());
+
+            URL jsonURL = new URL(peopleURL + cboxGender.getValue());
 
             ObjectMapper objectMapper = new ObjectMapper();
-            List<People> peoples = objectMapper.readValue(jsonURL, new TypeReference<List<People>>() {
-            });
-            People people = peoples.get(0);
+            List<People> peoples = objectMapper.readValue(jsonURL, new TypeReference<List<People>>() {});
 
-            tablePeople.add(people);
-            this.peopleTable.setItems(tablePeople);
+            for(int i = 0; i < peoples.size(); i++){
+                People people = peoples.get(i);
+                tablePeople.add(people);
+                this.peopleTable.setItems(tablePeople);
+            }
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -119,24 +116,12 @@ public class PeopleController extends Controller implements Initializable {
      * @param actionEvent The click in the button
      */
     public void peopleSave(ActionEvent actionEvent) {
-
-        try {
-
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
-            SaveController saveController = new SaveController(getResults());
-            saveController = loader.getController();
-
-            setScene(loader);
-
-            stage.setScene(scene);
-            stage.setTitle("Save");
-            stage.show();
-
-            Stage myStage = (Stage) this.btnSavePeople.getScene().getWindow();
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        String results = getResults();
+        System.out.println(results);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(txtSave.getText()+".txt"))) {
+            writer.write(results);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
 
     }
@@ -145,7 +130,7 @@ public class PeopleController extends Controller implements Initializable {
 
         String results = "[";
         for(int i = 0; i < tablePeople.size(); i++) {
-            results+="\n\t{";
+            results +="\n\t{";
             results +="\n\t\tname:" +tablePeople.get(i).getName();
             results +="\n\t\tage:" +tablePeople.get(i).getAge();
             results +="\n\t\tgender:" +tablePeople.get(i).getGender();
@@ -154,7 +139,6 @@ public class PeopleController extends Controller implements Initializable {
         }
         results += "\n]";
 
-        System.out.println(results);
         return results;
     }
 
