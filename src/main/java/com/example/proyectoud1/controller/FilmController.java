@@ -60,7 +60,7 @@ public class FilmController extends Controller implements Initializable {
     private ObservableList<Film> tableFilms;
 
     /**
-     *
+     * To set an attribute of films in each column of the table
      * @param url
      * @param resourceBundle
      */
@@ -147,7 +147,6 @@ public class FilmController extends Controller implements Initializable {
 
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
-            //SaveController saveController = new SaveController(results);
 
             setScene(loader);
             
@@ -158,7 +157,7 @@ public class FilmController extends Controller implements Initializable {
             Stage myStage = (Stage) this.btnSaveFilm.getScene().getWindow();
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
         }
 
     }

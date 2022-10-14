@@ -49,7 +49,7 @@ public class LocationController extends Controller implements Initializable {
     private ObservableList<Location> tableLocation;
 
     /**
-     *
+     * To set an attribute of locations in each column of the table
      * @param url
      * @param resourceBundle
      */
