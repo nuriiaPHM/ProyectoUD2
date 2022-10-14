@@ -26,7 +26,7 @@ import java.util.ResourceBundle;
 public class LocationController extends Controller implements Initializable {
 
     private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
-    private String locationURL = "https://ghibliapi.herokuapp.com/locations?name=";
+    private String locationURL = "https://ghibliapi.herokuapp.com/locations?terrain=";
 
     @FXML
     public TableView locTable;
@@ -131,7 +131,7 @@ public class LocationController extends Controller implements Initializable {
 
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
-            SaveController saveController = new SaveController(getResults());
+            //SaveController saveController = new SaveController(getResults());
 
             setScene(loader);
 
@@ -152,6 +152,7 @@ public class LocationController extends Controller implements Initializable {
      * @return A String in written as a JSON of Films
      */
     public String getResults(){
+        results = getResults();
 
         String results = "[";
         for(int i = 0; i < tableLocation.size(); i++) {

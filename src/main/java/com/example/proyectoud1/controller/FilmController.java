@@ -31,7 +31,6 @@ public class FilmController extends Controller implements Initializable {
 
 
     private String filmURL = "https://ghibliapi.herokuapp.com/films?title=";
-    private String results = "No data to save";
     @FXML
     private TextField filmTitle;
     @FXML
@@ -118,7 +117,7 @@ public class FilmController extends Controller implements Initializable {
      */
     public void goBack(ActionEvent actionEvent){
         try {
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+            //((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
 
             MainController mainController = loader.getController();

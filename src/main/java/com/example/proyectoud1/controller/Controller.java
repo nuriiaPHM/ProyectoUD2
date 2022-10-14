@@ -12,7 +12,7 @@ public class Controller {
     protected Parent root = new Parent() {
     };
     protected Scene scene = new Scene(root);
-
+    protected String results;
 
     public Stage getStage() {
         return stage;
