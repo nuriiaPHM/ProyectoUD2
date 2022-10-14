@@ -32,6 +32,57 @@ La ventana Locations funciona del mismo modo que Characters, tendremos que selec
 
 En ambas ventanas nos encontraremos además con el botón 'Go Back', que nos llevará de vuelta a la ventana de inicio por si queremos hacer otra búsqueda en otra categoría, y en la parte inferior tenemos un cuadro de texto en el que podremos introducir un nombre para el fichero donde, al pulsar el botón 'Save', se guardarán los datos de la última búsqueda que hayamos hecho en formato .json .
 
+MANUAL DE DESARROLADOR
+Launcher
+![1_launcher](https://user-images.githubusercontent.com/105040856/195914482-1dc6a25f-b6d8-419b-99f6-66f7ea49f00e.PNG)
+
+CONTROLLER
+![1 0](https://user-images.githubusercontent.com/105040856/195914358-bc647d75-4b69-47f1-9c62-b593969e253c.PNG)
+
+MAIN
+
+![2_main](https://user-images.githubusercontent.com/105040856/195914594-a5e70ceb-82aa-4000-bcd7-88fccbf2c6b6.PNG)
+
+![3_mainview](https://user-images.githubusercontent.com/105040856/195914619-9ce7d80a-3525-48f6-9c4b-6c4ae1e8fdb5.PNG)
+
+![4_atributtesMain](https://user-images.githubusercontent.com/105040856/195914663-086c48a2-5652-43b1-8572-cd72f57a0453.PNG)
+
+![5_metodoSearchP](https://user-images.githubusercontent.com/105040856/195914700-c16229a0-379c-4c17-a155-8c1ef10d9d9c.PNG)
+
+![6_metodoSearchL](https://user-images.githubusercontent.com/105040856/195914739-ad857406-6a51-411c-81c3-acad809cdca8.PNG)
+
+LOCARIONS
+
+![3_locview](https://user-images.githubusercontent.com/105040856/195915193-1def1296-edcc-43b2-b036-ee4e0a8e1779.PNG)
+
+![7_atributtesL](https://user-images.githubusercontent.com/105040856/195914862-236bf780-5fd8-4573-811f-2215bac65d1d.PNG)
+
+![7_atributtesLC_true](https://user-images.githubusercontent.com/105040856/195914892-148f7968-21e0-49c1-a17b-4a340b423f3c.PNG)
+
+![10_internaliceLC_true](https://user-images.githubusercontent.com/105040856/195915014-8bc1c23c-7a30-4c4d-88aa-b22a95daf5d1.PNG)
+
+![11_metodoSearchLC_true](https://user-images.githubusercontent.com/105040856/195915029-601f9e3f-1e3c-44fc-bc41-70846fb4df16.PNG)
+
+![12_metodoGoBackLC_true](https://user-images.githubusercontent.com/105040856/195915046-58a2e955-379a-4a1b-a559-027870699a01.PNG)
+
+![13_metodogetResultsLC_true](https://user-images.githubusercontent.com/105040856/195915064-3a84c3cf-5990-4e92-aab9-2dc9420c3fa1.PNG)
+
+![13_metodoSaVeLC_true](https://user-images.githubusercontent.com/105040856/195915085-ad996336-9766-42c3-8f5d-4caa19ff1a62.PNG)
+
+PEOPLE
+
+![9_peopleview](https://user-images.githubusercontent.com/105040856/195915256-a847f878-8250-4fd5-8898-c84e5b6f9a1a.PNG)
+
+![10_internaliceLC](https://user-images.githubusercontent.com/105040856/195915281-3b2335ad-1110-4677-870c-267f40ce479d.PNG)
+
+![11_metodoSearchLC](https://user-images.githubusercontent.com/105040856/195915305-97654b36-e9a2-4029-9b74-c40a70691897.PNG)
+
+![12_metodoGoBackLC](https://user-images.githubusercontent.com/105040856/195915328-2930c4c6-f65d-40c1-bb8c-43a6cd164ae3.PNG)
+
+![13_metodogetResultsLC](https://user-images.githubusercontent.com/105040856/195915348-a0fc3f16-7075-48c5-9adf-9852ca75a514.PNG)
+
+![13_metodoSaVeLC](https://user-images.githubusercontent.com/105040856/195915358-16b00627-2680-421b-8035-8efe8974a662.PNG)
+
 
 REPARTO DE TAREAS:
 
