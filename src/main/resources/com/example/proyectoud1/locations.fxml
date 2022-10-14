@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
 <AnchorPane prefHeight="359.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.LocationController">
     <children>
         <Button fx:id="locSearch" layoutX="235.0" layoutY="33.0" mnemonicParsing="false" onAction="#searchLocation" text="Search" />
@@ -20,8 +20,8 @@
         <Button fx:id="btnLocBack" layoutX="320.0" layoutY="33.0" mnemonicParsing="false" onAction="#locGoBack" text="Go Back" />
         <Button fx:id="btnLocSave" layoutX="360.0" layoutY="300.0" mnemonicParsing="false" onAction="#locSave" text="Save" />
       <Label layoutX="23.0" layoutY="304.0" text="Insert name of file" />
-      <TextField fx:id="txtLoc" layoutX="146.0" layoutY="300.0" />
-        <ComboBox fx:id="cboxTerrain" layoutX="71.0" layoutY="66.0" prefWidth="150.0">
+      <TextField fx:id="txtLocSave" layoutX="146.0" layoutY="300.0" />
+        <ComboBox fx:id="cboxTerrain" layoutX="71.0" layoutY="33.0" prefWidth="150.0">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Mountain" />

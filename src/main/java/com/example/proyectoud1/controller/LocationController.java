@@ -11,10 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -27,6 +24,8 @@ import java.util.ResourceBundle;
 
 public class LocationController extends Controller implements Initializable {
 
+    public TextField txtLocSave;
+    public ComboBox cboxTerrain;
     private String locationURL = "https://ghibliapi.herokuapp.com/locations?terrain=";
 
     @FXML
@@ -70,6 +69,7 @@ public class LocationController extends Controller implements Initializable {
      */
     @FXML
     public void searchLocation(ActionEvent actionEvent) {
+
         try {
             String cadena = "";
             for(int i = 0; i < locName.getText().length(); i++){
@@ -131,7 +131,7 @@ public class LocationController extends Controller implements Initializable {
 
         String results = getResults();
         System.out.println(results);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(locSave.getText()+".txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(txtLocSave.getText()+".txt"))) {
             writer.write(results);
         } catch (IOException e) {
             System.err.println(e.getMessage());
