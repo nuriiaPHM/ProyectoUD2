@@ -4,47 +4,38 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import org.controlsfx.control.PrefixSelectionChoiceBox;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-public class SaveController extends Controller {
+public class SaveController {
 
-    public Controller controller;
+    //public Controller controller ;
     public String results;
-
-    @FXML
-    public TextField txtSave;
     @FXML
     public Button btnSave;
+    @FXML
+    public TextField txtSave;
 
-    /**
-     *
-     * @param controller
-     * @param results
-     */
-    public SaveController(Controller controller, String results) {
-        this.controller = controller;
+    public SaveController() {
+    }
+
+    public SaveController(String results) {
         this.results = results;
     }
 
-    /**
-     *
-     * @param actionEvent The clic in the button 'btnSave'
-     */
-    public void save(ActionEvent actionEvent) {
-        try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(txtSave.getText() + ".txt"));
-            if (results == null) {
-                System.out.println("Vacio");
-            } else {
-                bw.write(results);
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    public void save(ActionEvent actionEvent) throws IOException {
+        if(results == null){
+            System.out.println("Vacio");
+        }else {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(txtSave.getText()+".txt"));
+            bw.write(results);
         }
-
     }
 
 }

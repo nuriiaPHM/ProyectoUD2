@@ -15,7 +15,7 @@ public class MainController extends Controller {
 
     /**
      *
-     * @param actionEvent The clic in the button
+     * @param actionEvent The click in the button
      */
     @FXML
     public void sFilm(ActionEvent actionEvent) {
@@ -40,7 +40,7 @@ public class MainController extends Controller {
 
     /**
      *
-     * @param actionEvent The clic in the button
+     * @param actionEvent The click in the button
      */
     public void sPeople(ActionEvent actionEvent) {
         try {
@@ -64,7 +64,7 @@ public class MainController extends Controller {
 
     /**
      *
-     * @param actionEvent The clic in the button
+     * @param actionEvent The click in the button
      */
     public void sLocation(ActionEvent actionEvent) {
         try {

@@ -61,7 +61,7 @@ public class PeopleController extends Controller implements Initializable {
 
     /**
      *
-     * @param actionEvent The clic in the button
+     * @param actionEvent The click in the button
      */
     @FXML
     public void peopleSearch(ActionEvent actionEvent) {
@@ -91,7 +91,7 @@ public class PeopleController extends Controller implements Initializable {
 
     /**
      *
-     * @param actionEvent The clic in the button
+     * @param actionEvent The click in the button
      */
     public void peopleGoBack(ActionEvent actionEvent){
         try {
@@ -116,15 +116,15 @@ public class PeopleController extends Controller implements Initializable {
 
     /**
      *
-     * @param actionEvent The clic in the button
+     * @param actionEvent The click in the button
      */
     public void peopleSave(ActionEvent actionEvent) {
 
         try {
-            SaveController saveController = new SaveController(new FilmController(),getResults());
+
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("save.fxml"));
-
+            SaveController saveController = new SaveController(getResults());
             saveController = loader.getController();
 
             setScene(loader);
