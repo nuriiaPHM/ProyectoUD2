@@ -4,79 +4,38 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class People {
-	/**
-	 * People class attributes
-	 */
-	@JsonProperty("films")
-	private List<String> films;
 
-	@JsonProperty("eye_color")
-	private String eyeColor;
-
-	@JsonProperty("gender")
 	private String gender;
-
-	@JsonProperty("species")
-	private String species;
-
-	@JsonProperty("name")
 	private String name;
-
-	@JsonProperty("id")
-	private String id;
-
-	@JsonProperty("age")
+	private int id;
 	private String age;
-
-	@JsonProperty("url")
-	private String url;
-
-	@JsonProperty("hair_color")
 	private String hairColor;
 
-	@JsonProperty("gander")
-	private String gander;
-
-	/**
-	 * Getter of People class attributes
-	 */
-	public List<String> getFilms(){
-		return films;
+	public People(int id, String name, String age, String gender, String hairColor) {
+		this.gender = gender;
+		this.name = name;
+		this.id = id;
+		this.age = age;
+		this.hairColor = hairColor;
 	}
 
-	public String getEyeColor(){
-		return eyeColor;
-	}
-
-	public String getGender(){
+	public String getGender() {
 		return gender;
 	}
 
-	public String getSpecies(){
-		return species;
-	}
-
-	public String getName(){
+	public String getName() {
 		return name;
 	}
 
-	public String getId(){
+	public int getId() {
 		return id;
 	}
 
-	public String getAge(){
+	public String getAge() {
 		return age;
 	}
 
-	public String getUrl(){
-		return url;
-	}
-
-	public String getHairColor(){
+	public String getHairColor() {
 		return hairColor;
-	}
-
-	public String getGander(){
-		return gander;
 	}
 }

@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -71,9 +73,43 @@ public class PeopleController extends Controller implements Initializable {
      */
     @FXML
     public void peopleSearch(ActionEvent actionEvent) {
-        try {
+        try(Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM characters");
+
             tablePeople.remove(0,tablePeople.size());
 
+            while (rs.next()){
+                int id = rs.getInt("id");
+                String nam = rs.getString("nam");
+                String age = rs.getString("age");
+                String gender = rs.getString("gender");
+                String hair = rs.getString("hair_color");
+
+                People people = new People(id,nam,age,gender,hair);
+
+                tablePeople.add(people);
+            }
+            this.peopleTable.setItems(tablePeople);
+/*
+            String insert = "insert into paises(nombre, num_habitantes, capital, moneda)" +
+                    "values ('Italia', 45000000, 'Roma', 'Euro');";
+            String update = "update paises set num_habitantes = 2 where nombre = 'España'";
+
+
+            PreparedStatement ps = con.prepareStatement(insert);
+            int n_insert = ps.executeUpdate();
+
+            ps = con.prepareStatement(update);
+            int n_update = ps.executeUpdate();
+*/
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        /*
+        try {
+            tablePeople.remove(0,tablePeople.size());
             URL jsonURL = new URL(peopleURL + cboxGender.getValue());
 
             ObjectMapper objectMapper = new ObjectMapper();
@@ -89,6 +125,8 @@ public class PeopleController extends Controller implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+         */
     }
 
     /**

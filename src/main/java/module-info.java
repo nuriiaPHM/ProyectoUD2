@@ -10,6 +10,7 @@ module com.example.proyectoud1 {
     requires com.almasb.fxgl.all;
     requires com.fasterxml.jackson.annotation;
     requires com.fasterxml.jackson.databind;
+    requires java.sql;
 
     opens com.example.proyectoud1 to javafx.fxml;
     exports com.example.proyectoud1;
