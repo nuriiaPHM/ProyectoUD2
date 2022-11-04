@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="281.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.Choose">
+   <children>
+      <Button fx:id="btnSelect" layoutX="55.0" layoutY="152.0" mnemonicParsing="false" text="See Values" />
+      <Button fx:id="btnInsert" layoutX="163.0" layoutY="152.0" mnemonicParsing="false" text="Insert Values" />
+      <Button fx:id="btnDelete" layoutX="285.0" layoutY="152.0" mnemonicParsing="false" text="Delete Values" />
+      <Label layoutX="149.0" layoutY="99.0" text="What do you wanna do?" />
+   </children>
+</AnchorPane>
