@@ -23,6 +23,7 @@ public class MainController extends Controller {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("people.fxml"));
 
             PeopleController peopleController = loader.getController();
+            table = 1;
 
             setScene(loader);
             scene.setFill(Color.rgb(0,0,255));
@@ -47,6 +48,7 @@ public class MainController extends Controller {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("locations.fxml"));
 
             LocationController locationController = loader.getController();
+            table = 2;
 
             setScene(loader);
 
