@@ -2,6 +2,7 @@ package com.example.proyectoud1.controller;
 
 import com.example.proyectoud1.Main;
 import com.example.proyectoud1.model.Location;
+import com.example.proyectoud1.model.People;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;
@@ -19,6 +20,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -75,20 +77,27 @@ public class LocationController extends Controller implements Initializable {
     @FXML
     public void searchLocation(ActionEvent actionEvent) {
 
-        try {
+        try(Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM locations where terrain = '" + cboxTerrain.getValue() + "'");
+
             tableLocation.remove(0,tableLocation.size());
 
-            URL jsonURL = new URL(locationURL + cboxTerrain.getValue());
+            while (rs.next()){
+                int id = rs.getInt("id");
+                String nam = rs.getString("nam");
+                String climate = rs.getString("climate");
+                String terrain = rs.getString("terrain");
+                String water = rs.getString("water_surface");
 
-            ObjectMapper objectMapper = new ObjectMapper();
-            List<Location> locations = objectMapper.readValue(jsonURL, new TypeReference<List<Location>>() {});
-            for(int i = 0; i < locations.size() ;i++) {
-                Location location = locations.get(i);
+                Location location = new Location(id,nam,climate,terrain,water);
+
                 tableLocation.add(location);
-
             }
             this.locTable.setItems(tableLocation);
-        } catch (IOException e) {
+
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 

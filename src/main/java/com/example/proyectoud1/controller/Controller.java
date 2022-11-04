@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Controller {
 
-    protected String jdbcUrl = "jdbc:mysql://localhost:3306/bbdd_studio_ghibli";
+    protected String jdbcUrl = "jdbc:mysql://localhost:3306/studio_ghibli";
 
     protected Stage stage = new Stage();
     protected Parent root = new Parent() {

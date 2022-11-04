@@ -73,9 +73,10 @@ public class PeopleController extends Controller implements Initializable {
      */
     @FXML
     public void peopleSearch(ActionEvent actionEvent) {
+
         try(Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM characters");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM characters where gender = '" + cboxGender.getValue() + "'");
 
             tablePeople.remove(0,tablePeople.size());
 
@@ -91,42 +92,12 @@ public class PeopleController extends Controller implements Initializable {
                 tablePeople.add(people);
             }
             this.peopleTable.setItems(tablePeople);
-/*
-            String insert = "insert into paises(nombre, num_habitantes, capital, moneda)" +
-                    "values ('Italia', 45000000, 'Roma', 'Euro');";
-            String update = "update paises set num_habitantes = 2 where nombre = 'España'";
 
-
-            PreparedStatement ps = con.prepareStatement(insert);
-            int n_insert = ps.executeUpdate();
-
-            ps = con.prepareStatement(update);
-            int n_update = ps.executeUpdate();
-*/
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        /*
-        try {
-            tablePeople.remove(0,tablePeople.size());
-            URL jsonURL = new URL(peopleURL + cboxGender.getValue());
 
-            ObjectMapper objectMapper = new ObjectMapper();
-            List<People> peoples = objectMapper.readValue(jsonURL, new TypeReference<List<People>>() {});
-
-            for(int i = 0; i < peoples.size(); i++){
-                People people = peoples.get(i);
-                tablePeople.add(people);
-
-            }
-            this.peopleTable.setItems(tablePeople);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-         */
     }
 
     /**

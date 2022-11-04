@@ -7,11 +7,11 @@ public class Location {
 
 	private String surfaceWater;
 	private String name;
-	private String id;
+	private int id;
 	private String climate;
 	private String terrain;
 
-	public Location(String surfaceWater, String name, String id, String climate, String terrain) {
+	public Location(int id, String name, String climate, String terrain, String surfaceWater) {
 		this.surfaceWater = surfaceWater;
 		this.name = name;
 		this.id = id;
@@ -19,15 +19,13 @@ public class Location {
 		this.terrain = terrain;
 	}
 
-	public String getSurfaceWater() {
-		return surfaceWater;
-	}
+	public String getSurfaceWater() { return surfaceWater; }
 
 	public String getName() {
 		return name;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 

@@ -32,7 +32,7 @@ INSERT INTO `studio_ghibli`.`locations` (`id`, `nam`, `climate`, `terrain`, `wat
 INSERT INTO `studio_ghibli`.`locations` (`id`, `nam`, `climate`, `terrain`, `water_surface`) VALUES ('2', 'Pazu´s Mines', 'Dry', 'Hill', '0');
 INSERT INTO `studio_ghibli`.`locations` (`id`, `nam`, `climate`, `terrain`, `water_surface`) VALUES ('3', 'Koriko', 'Mild', 'Hill', '50');
 INSERT INTO `studio_ghibli`.`locations` (`id`, `nam`, `climate`, `terrain`, `water_surface`) VALUES ('4', 'Hospital', 'Continental', 'Hill', '30');
-INSERT INTO `studio_ghibli`.`locations` (`id`, `nam`, `climate`, `terrain`, `water_surface`) VALUES ('5', 'The Cat Kingdom', 'Continental', 'Hill', '30');
+INSERT INTO `studio_ghibli`.`locations` (`id`, `nam`, `climate`, `terrain`, `water_surface`) VALUES ('5', 'The Cat Kingdom', 'Continental', 'Plain', '30');
 INSERT INTO `studio_ghibli`.`locations` (`id`, `nam`, `climate`, `terrain`, `water_surface`) VALUES ('6', 'The Marsh House', 'Mild', 'Marsh', '60');
 INSERT INTO `studio_ghibli`.`locations` (`id`, `nam`, `climate`, `terrain`, `water_surface`) VALUES ('7', 'Zeniba\'s Cottage', 'TODO', 'TODO', '40');
 INSERT INTO `studio_ghibli`.`locations` (`id`, `nam`, `climate`, `terrain`, `water_surface`) VALUES ('8', 'Bamboo Forest', 'Tropical', 'Forest', '10');
