@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class MainController extends Controller {
@@ -24,7 +25,7 @@ public class MainController extends Controller {
             PeopleController peopleController = loader.getController();
 
             setScene(loader);
-
+            scene.setFill(Color.rgb(0,0,255));
             stage.setScene(scene);
             stage.setTitle("Characters");
             stage.show();

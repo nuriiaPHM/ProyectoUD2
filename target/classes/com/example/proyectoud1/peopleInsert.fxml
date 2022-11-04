@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="298.0" prefWidth="534.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
+   <children>
+      <Button fx:id="btnPeopleInsert" layoutX="404.0" layoutY="242.0" mnemonicParsing="false" onAction="#insertPeople" text="INSERT" />
+      <Label layoutX="104.0" layoutY="96.0" text="Name:" />
+      <Label layoutX="104.0" layoutY="139.0" text="Age:" />
+      <Label layoutX="104.0" layoutY="185.0" text="Gender:" />
+      <Label layoutX="104.0" layoutY="221.0" text="Hair color:" />
+      <Label layoutX="176.0" layoutY="32.0" text="Insert your character">
+         <font>
+            <Font name="DejaVu Serif Condensed Bold" size="20.0" />
+         </font></Label>
+      <TextField layoutX="170.0" layoutY="92.0" />
+      <TextField layoutX="170.0" layoutY="135.0" />
+      <TextField layoutX="170.0" layoutY="181.0" />
+      <TextField layoutX="170.0" layoutY="217.0" />
+   </children>
+</AnchorPane>
