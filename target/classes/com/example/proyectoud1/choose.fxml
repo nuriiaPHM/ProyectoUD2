@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="167.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.ChooseController">
+<AnchorPane prefHeight="214.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/11.0.14-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.ChooseController">
    <children>
-      <Button fx:id="btnSelect" layoutX="77.0" layoutY="91.0" mnemonicParsing="false" onAction="#sPeople" text="See Values" />
-      <Button fx:id="btnInsert" layoutX="173.0" layoutY="91.0" mnemonicParsing="false" onAction="#iPeople" text="Insert Values" />
-      <Button fx:id="btnDelete" layoutX="279.0" layoutY="91.0" mnemonicParsing="false" onAction="#dPeople" text="Delete Values" />
-      <Label layoutX="150.0" layoutY="47.0" text="What do you wanna do?" />
+      <Button fx:id="btnSelect" layoutX="207.0" layoutY="75.0" mnemonicParsing="false" onAction="#select" prefHeight="25.0" prefWidth="71.0" text="Search" />
+      <Button fx:id="btnInsert" layoutX="207.0" layoutY="109.0" mnemonicParsing="false" onAction="#insert" prefHeight="25.0" prefWidth="71.0" text="Add new" />
+      <Button fx:id="btnDelete" layoutX="207.0" layoutY="144.0" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="71.0" text="Delete" />
+      <Label layoutX="66.0" layoutY="44.0" text="Category:" />
+      <Label layoutX="222.0" layoutY="44.0" text="Option:" />
+      <Group layoutX="56.0" layoutY="91.0">
+         <children>
+            <RadioButton fx:id="btnCharacter" mnemonicParsing="false" selected="true" text="Charcters">
+               <toggleGroup>
+                  <ToggleGroup fx:id="btnGroup" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="btnLocation" layoutY="39.0" mnemonicParsing="false" text="Locations" toggleGroup="$btnGroup" />
+         </children>
+      </Group>
    </children>
 </AnchorPane>

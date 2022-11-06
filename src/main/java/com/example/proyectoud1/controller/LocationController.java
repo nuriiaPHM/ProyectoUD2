@@ -110,9 +110,9 @@ public class LocationController extends Controller implements Initializable {
     public void locGoBack(ActionEvent actionEvent){
         try {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("choose.fxml"));
 
-            MainController mainController = loader.getController();
+            ChooseController chooseController = loader.getController();
 
             setScene(loader);
 

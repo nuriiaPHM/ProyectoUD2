@@ -105,9 +105,9 @@ public class PeopleController extends Controller implements Initializable {
     public void peopleGoBack(ActionEvent actionEvent){
         try {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("main.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("choose.fxml"));
 
-            MainController mainController = loader.getController();
+            ChooseController chooseController = loader.getController();
 
             setScene(loader);
 

@@ -13,10 +13,10 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("choose.fxml"));
         Parent root = fxmlLoader.load();
         stage.setTitle("Studio Ghibli");
-        stage.setScene(new Scene(root, 379, 164));
+        stage.setScene(new Scene(root, 340, 214));
         ((Controller) fxmlLoader.getController()).setStage(stage);
         stage.show();
     }

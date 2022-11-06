@@ -28,7 +28,7 @@
          </items>
       </ComboBox>
       <TextField fx:id="txtHair" layoutX="170.0" layoutY="225.0" />
-      <Label fx:id="lblMessage" layoutX="400.0" layoutY="200.0" />
+      <Label fx:id="lblMessage" layoutX="370.0" layoutY="200.0" />
       <Button fx:id="btnGoBack" layoutX="442.0" layoutY="250.0" mnemonicParsing="false" onAction="#pInsertGoBack" text="Go Back" />
    </children>
 </AnchorPane>

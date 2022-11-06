@@ -1,17 +1,22 @@
 package com.example.proyectoud1.controller;
 
 import com.example.proyectoud1.Main;
-import com.example.proyectoud1.model.People;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
-public class PeopleInsertController extends Controller {
+public class PeopleDeleteController extends Controller {
 
     @FXML
     public Button btnPeopleInsert;
@@ -64,7 +69,7 @@ public class PeopleInsertController extends Controller {
      * To open again the Main Window
      * @param actionEvent The click in the button
      */
-    public void pInsertGoBack(ActionEvent actionEvent){
+    public void goBack(ActionEvent actionEvent){
         try {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("choose.fxml"));

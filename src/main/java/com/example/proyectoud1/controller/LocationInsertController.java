@@ -11,10 +11,10 @@ import javafx.stage.Stage;
 
 import java.sql.*;
 
-public class PeopleInsertController extends Controller {
+public class LocationInsertController extends Controller {
 
     @FXML
-    public Button btnPeopleInsert;
+    public Button btnLocInsert;
     @FXML
     public TextField txtName;
     @FXML
@@ -64,7 +64,7 @@ public class PeopleInsertController extends Controller {
      * To open again the Main Window
      * @param actionEvent The click in the button
      */
-    public void pInsertGoBack(ActionEvent actionEvent){
+    public void goBack(ActionEvent actionEvent){
         try {
             ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("choose.fxml"));
