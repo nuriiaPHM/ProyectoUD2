@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="326.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
     <children>
         <Button fx:id="peopleSearch" layoutX="249.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleSearch" text="Search" />
-        <Label fx:id="string" layoutX="27.0" layoutY="37.0" text="Gender:" />
+        <Label layoutX="27.0" layoutY="37.0" text="Gender:" />
       <ComboBox fx:id="cboxGender" layoutX="83.0" layoutY="33.0" prefWidth="150.0">
           <items>
               <FXCollections fx:factory="observableArrayList">

@@ -20,13 +20,11 @@ public class MainController extends Controller {
     public void sPeople(ActionEvent actionEvent) {
         try {
             ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("people.fxml"));
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("choose.fxml"));
 
-            PeopleController peopleController = loader.getController();
-            table = 1;
+            ChooseController chooseController = loader.getController();
 
             setScene(loader);
-            scene.setFill(Color.rgb(0,0,255));
             stage.setScene(scene);
             stage.setTitle("Characters");
             stage.show();
@@ -48,7 +46,6 @@ public class MainController extends Controller {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("locations.fxml"));
 
             LocationController locationController = loader.getController();
-            table = 2;
 
             setScene(loader);
 
