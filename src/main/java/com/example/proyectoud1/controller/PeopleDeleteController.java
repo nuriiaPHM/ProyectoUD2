@@ -19,44 +19,33 @@ import java.sql.SQLException;
 public class PeopleDeleteController extends Controller {
 
     @FXML
-    public Button btnPeopleInsert;
-    @FXML
     public TextField txtName;
     @FXML
-    public TextField txtAge;
-    @FXML
-    public ComboBox cboxGender;
-    @FXML
-    public TextField txtHair;
-    @FXML
     public Button btnGoBack;
+    @FXML
     public Label lblMessage;
+    @FXML
+    public Button btnDelete;
 
     /**
      * To search a gender in the API
      * @param actionEvent The click in the button
      */
     @FXML
-    public void insert(ActionEvent actionEvent) {
+    public void delete(ActionEvent actionEvent) {
 
         try (Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
 
             String name = txtName.getText();
-            String age = txtAge.getText();
-            String gender = cboxGender.getValue().toString();
-            String hair = txtHair.getText();
 
-            String insert = "insert into characters (nam, age, gender, hair_color)" +
-                    "values ('"+name+"','"+age+"', '"+gender+"', '"+hair+"');";
+            String delete = "delete from characters where nam = '" + name + "'";
 
-            PreparedStatement ps = con.prepareStatement(insert);
-            int n_insert = ps.executeUpdate();
+            PreparedStatement ps = con.prepareStatement(delete);
+            int n_delete = ps.executeUpdate();
 
-            lblMessage.setText("Character inserted: " + name);
+            lblMessage.setText("Character deleted: " + name);
 
             txtName.setText("");
-            txtAge.setText("");
-            txtHair.setText("");
 
 
         } catch (SQLException e) {
