@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="326.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
+<AnchorPane fx:id="apPeople" prefHeight="326.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/17.0.2-ea"  stylesheets="@../css/styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
     <children>
         <Button fx:id="peopleSearch" layoutX="249.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleSearch" text="Search" />
         <Label layoutX="27.0" layoutY="37.0" text="Gender:" />
