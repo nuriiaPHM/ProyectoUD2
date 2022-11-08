@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="113.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleDeleteController">
+    <children>
+        <Button fx:id="btnDelete" layoutX="249.0" layoutY="41.0" mnemonicParsing="false" onAction="#delete" text="DELETE" />
+        <Label layoutX="27.0" layoutY="44.0" text="Name:" />
+      <Button fx:id="btnGoBack" layoutX="371.0" layoutY="40.0" mnemonicParsing="false" onAction="#goBack" text="Go Back" />
+      <TextField fx:id="txtName" layoutX="76.0" layoutY="42.0" />
+        <Label fx:id="lblMessage" layoutX="80.0" layoutY="80.0" />
+    </children>
+</AnchorPane>

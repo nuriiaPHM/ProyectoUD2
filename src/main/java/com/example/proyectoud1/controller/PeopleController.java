@@ -31,6 +31,7 @@ public class PeopleController extends Controller implements Initializable {
     public TextField txtSave;
     @FXML
     public ComboBox cboxGender;
+    public TableColumn tcDelete;
     @FXML
     private Button peopleSearch;
     @FXML
@@ -47,7 +48,6 @@ public class PeopleController extends Controller implements Initializable {
     private TableColumn peopleTGender;
     @FXML
     private TableColumn peopleTHair;
-    private Button delete;
 
     private ObservableList<People> tablePeople;
 
@@ -63,7 +63,7 @@ public class PeopleController extends Controller implements Initializable {
         this.peopleTAge.setCellValueFactory(new PropertyValueFactory("age"));
         this.peopleTGender.setCellValueFactory(new PropertyValueFactory("gender"));
         this.peopleTHair.setCellValueFactory(new PropertyValueFactory("hairColor"));
-
+        this.tcDelete.setCellValueFactory(new PropertyValueFactory("button"));
     }
 
     /**
@@ -72,6 +72,7 @@ public class PeopleController extends Controller implements Initializable {
      */
     @FXML
     public void peopleSearch(ActionEvent actionEvent) {
+
         try(Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM characters where gender = '" + cboxGender.getValue() + "'");
@@ -85,9 +86,7 @@ public class PeopleController extends Controller implements Initializable {
                 String gender = rs.getString("gender");
                 String hair = rs.getString("hair_color");
 
-
-                People people = new People(id,nam,age,gender,hair);
-
+                People people = new People(id,nam,age,gender,hair, new Button("Delete"));
 
                 tablePeople.add(people);
             }
@@ -98,26 +97,6 @@ public class PeopleController extends Controller implements Initializable {
             e.printStackTrace();
         }
 
-    }
-    public void peopleDelete(ActionEvent actionEvent){
-
-
-        try(Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
-            Statement stmt = con.createStatement();
-            System.out.println(peopleTable.getSelectionModel().getSelectedCells().get(0));
-            String delete = "DELETE from characters where nam = '" +peopleTable.getSelectionModel().getSelectedCells().get(0) + "'";
-            PreparedStatement ps = con.prepareStatement(delete);
-            ps.executeUpdate();
-
-            tablePeople.remove(0,tablePeople.size());
-
-
-
-            peopleTable.getSelectionModel().getSelectedCells().remove(0,(peopleTable.getSelectionModel().getSelectedCells().size()) );
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
