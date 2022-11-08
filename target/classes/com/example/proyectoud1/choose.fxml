@@ -14,7 +14,7 @@
       <Label layoutX="222.0" layoutY="44.0" text="Option:" />
       <Group layoutX="56.0" layoutY="91.0">
          <children>
-            <RadioButton fx:id="btnCharacter" mnemonicParsing="false" selected="true" text="Charcters">
+            <RadioButton fx:id="btnCharacter" mnemonicParsing="false" selected="true" text="Characters">
                <toggleGroup>
                   <ToggleGroup fx:id="btnGroup" />
                </toggleGroup></RadioButton>

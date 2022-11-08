@@ -77,7 +77,7 @@ public class ChooseController extends Controller{
         } else if (btnLocation.isSelected()){
             try {
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-                FXMLLoader loader = new FXMLLoader(Main.class.getResource("locationsInsert.fxml"));
+                FXMLLoader loader = new FXMLLoader(Main.class.getResource("locationInsert.fxml"));
 
                 LocationInsertController locationInsertController = loader.getController();
 
@@ -98,9 +98,9 @@ public class ChooseController extends Controller{
         if (btnCharacter.isSelected()){
             try {
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-                FXMLLoader loader = new FXMLLoader(Main.class.getResource("peopleInsert.fxml"));
+                FXMLLoader loader = new FXMLLoader(Main.class.getResource("peopleDelete.fxml"));
 
-                PeopleInsertController peopleInsertController = loader.getController();
+                PeopleDeleteController peopleDeleteController = loader.getController();
 
                 setScene(loader);
                 stage.setScene(scene);
@@ -115,9 +115,9 @@ public class ChooseController extends Controller{
         } else if (btnLocation.isSelected()){
             try {
                 ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-                FXMLLoader loader = new FXMLLoader(Main.class.getResource("locationsInsert.fxml"));
+                FXMLLoader loader = new FXMLLoader(Main.class.getResource("locationDelete.fxml"));
 
-                LocationInsertController locationInsertController = loader.getController();
+                LocationDeleteController locationDeleteController = loader.getController();
 
                 setScene(loader);
                 stage.setScene(scene);
