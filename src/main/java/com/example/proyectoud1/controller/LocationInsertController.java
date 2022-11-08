@@ -24,6 +24,8 @@ public class LocationInsertController extends Controller {
     @FXML
     public Button btnGoBack;
     public Label lblMessage;
+    public ComboBox cboxClimate;
+    public ComboBox cboxTerrain;
 
     /**
      * To search a gender in the API
@@ -35,8 +37,8 @@ public class LocationInsertController extends Controller {
         try (Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
 
             String name = txtName.getText();
-            String climate = txtClimate.getText();
-            String terrain = txtTerrain.getText();
+            String climate = cboxClimate.getValue().toString();
+            String terrain = cboxTerrain.getValue().toString();
             String water_surface = txtWater.getText();
 
             String insert = "insert into locations (nam, climate, terrain, water_surface)" +
@@ -48,8 +50,6 @@ public class LocationInsertController extends Controller {
             lblMessage.setText("Location inserted: " + name);
 
             txtName.setText("");
-            txtClimate.setText("");
-            txtTerrain.setText("");
             txtWater.setText("");
 
 

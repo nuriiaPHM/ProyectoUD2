@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apPeople" prefHeight="326.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
+<AnchorPane prefHeight="326.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
     <children>
         <Button fx:id="peopleSearch" layoutX="249.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleSearch" text="Search" />
         <Label layoutX="27.0" layoutY="37.0" text="Gender:" />
@@ -18,18 +18,18 @@
           </items>
 
       </ComboBox>
-        <TableView fx:id="peopleTable" layoutX="23.0" layoutY="75.0" prefHeight="187.0" prefWidth="434.0">
+        <TableView fx:id="peopleTable" layoutX="23.0" layoutY="75.0" prefHeight="187.0" prefWidth="504.0">
             <columns>
             <TableColumn fx:id="peopleTName" prefWidth="130.0" text="Name" />
                 <TableColumn fx:id="peopleTAge" prefWidth="110.0" text="Age" />
                 <TableColumn fx:id="peopleTGender" prefWidth="89.0" text="Gender" />
-                <TableColumn fx:id="peopleTHair" prefWidth="103.0" text="Hair Color" />
+                <TableColumn fx:id="peopleTHair" prefWidth="87.0" text="Hair Color" />
+                <TableColumn fx:id="tcDelete" prefWidth="86.0" text="Delete" />
             </columns>
         </TableView>
-      <Button fx:id="btnPeopleBack" layoutX="320.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleGoBack" text="Go Back" />
-      <Button fx:id="btnSavePeople" layoutX="380.0" layoutY="279.0" mnemonicParsing="false" onAction="#peopleSave" text="Save" />
-      <Label layoutX="54.0" layoutY="283.0" text="File name:" />
-      <TextField fx:id="txtSave" layoutX="129.0" layoutY="279.0" prefHeight="25.0" prefWidth="222.0" />
-      <Button fx:id="btnDelete" layoutX="395.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleDelete" text="DELETE" />
+      <Button fx:id="btnPeopleBack" layoutX="449.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleGoBack" text="Go Back" />
+      <Button fx:id="btnSavePeople" layoutX="418.0" layoutY="279.0" mnemonicParsing="false" onAction="#peopleSave" text="Save" />
+      <Label layoutX="92.0" layoutY="283.0" text="File name:" />
+      <TextField fx:id="txtSave" layoutX="167.0" layoutY="279.0" prefHeight="25.0" prefWidth="222.0" />
     </children>
 </AnchorPane>
