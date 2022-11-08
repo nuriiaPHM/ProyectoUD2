@@ -24,19 +24,6 @@ public class Location {
 		this.climate = climate;
 		this.terrain = terrain;
 		this.delete = delete;
-		delete.setOnAction(actionEvent2 -> {
-			System.out.println(name);
-			String jdbcUrl = "jdbc:mysql://localhost:3306/studio_ghibli";
-			String deleteS = "DELETE FROM LOCATIONS WHERE nam = '" + name+ "'";
-			try (Connection con2 = DriverManager.getConnection(jdbcUrl, "root", "root")) {
-				PreparedStatement psDelete = con2.prepareStatement(deleteS);
-				psDelete.executeUpdate();
-
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		});
 	}
 
 	public Button getDelete() {return delete;}

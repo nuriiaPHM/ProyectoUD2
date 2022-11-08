@@ -91,9 +91,21 @@ public class LocationController extends Controller implements Initializable {
                 String climate = rs.getString("climate");
                 String terrain = rs.getString("terrain");
                 String water = rs.getString("water_surface");
+                Button button = new Button("Delete");
+                button.setOnAction(actionEventDelete -> {
+                    try(Connection con2 = DriverManager.getConnection(jdbcUrl, "root", "root")){
+                        String delete = "delete from locations where id = '" + id + "'";
 
+                        PreparedStatement ps = con2.prepareStatement(delete);
 
-                Location location = new Location(id,nam,climate,terrain,water,new Button("DELETE"));
+                        ps.executeUpdate();
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    searchLocation(actionEventDelete);
+                });
+
+                Location location = new Location(id,nam,climate,terrain,water,button);
                 tableLocation.add(location);
             }
             this.locTable.setItems(tableLocation);
