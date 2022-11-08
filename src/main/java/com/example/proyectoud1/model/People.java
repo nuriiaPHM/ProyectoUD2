@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.example.proyectoud1.controller.PeopleController;
 import javafx.scene.control.Button;
 
 public class People {
@@ -14,7 +15,7 @@ public class People {
 	private int id;
 	private String age;
 	private String hairColor;
-	private Button button;
+	public Button button;
 
 	public People(int id, String name, String age, String gender, String hairColor, Button button) {
 		this.gender = gender;
@@ -23,20 +24,6 @@ public class People {
 		this.age = age;
 		this.hairColor = hairColor;
 		this.button = button;
-
-		button.setOnAction(actionEvent -> {
-			String jdbcUrl = "jdbc:mysql://localhost:3306/studio_ghibli";
-			try (Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
-				String delete = "delete from characters where id = '" + id + "'";
-
-				PreparedStatement ps = con.prepareStatement(delete);
-
-				int n_delete = ps.executeUpdate();
-
-			} catch (SQLException e) {
-				throw new RuntimeException(e);
-			}
-		});
 	}
 
 	public String getGender() {

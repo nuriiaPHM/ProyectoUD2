@@ -73,20 +73,32 @@ public class PeopleController extends Controller implements Initializable {
     @FXML
     public void peopleSearch(ActionEvent actionEvent) {
 
-        try(Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
+        try (Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM characters where gender = '" + cboxGender.getValue() + "'");
 
-            tablePeople.remove(0,tablePeople.size());
+            tablePeople.remove(0, tablePeople.size());
 
-            while (rs.next()){
+            while (rs.next()) {
                 int id = rs.getInt("id");
                 String nam = rs.getString("nam");
                 String age = rs.getString("age");
                 String gender = rs.getString("gender");
                 String hair = rs.getString("hair_color");
+                Button button = new Button("Delete");
+                button.setOnAction(actionEventDelete -> {
+                    try(Connection con2 = DriverManager.getConnection(jdbcUrl, "root", "root")){
+                        String delete = "delete from characters where id = '" + id + "'";
 
-                People people = new People(id,nam,age,gender,hair, new Button("Delete"));
+                        PreparedStatement ps = con2.prepareStatement(delete);
+
+                        ps.executeUpdate();
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    peopleSearch(actionEventDelete);
+                });
+                People people = new People(id, nam, age, gender, hair, button);
 
                 tablePeople.add(people);
             }

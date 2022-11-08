@@ -16,7 +16,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("choose.fxml"));
         Parent root = fxmlLoader.load();
         stage.setTitle("Studio Ghibli");
-        stage.setScene(new Scene(root, 340, 214));
+        stage.setScene(new Scene(root, 340, 184));
         ((Controller) fxmlLoader.getController()).setStage(stage);
         stage.show();
     }
