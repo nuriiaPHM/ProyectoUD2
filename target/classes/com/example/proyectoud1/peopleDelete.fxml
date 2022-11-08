@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="326.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/11.0.14-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleDeleteController">
+    <children>
+        <Button fx:id="peopleSearch" layoutX="249.0" layoutY="33.0" mnemonicParsing="false" onAction="#select" text="Search" />
+        <Label layoutX="27.0" layoutY="37.0" text="Gender:" />
+      <ComboBox fx:id="cboxGender" layoutX="83.0" layoutY="33.0" prefWidth="150.0">
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Male" />
+                  <String fx:value="Female" />
+              </FXCollections>
+          </items>
+
+      </ComboBox>
+        <TableView fx:id="peopleTable" layoutX="23.0" layoutY="75.0" prefHeight="187.0" prefWidth="533.0">
+            <columns>
+            <TableColumn fx:id="peopleTName" prefWidth="130.0" text="Name" />
+                <TableColumn fx:id="peopleTAge" prefWidth="110.0" text="Age" />
+                <TableColumn fx:id="peopleTGender" prefWidth="89.0" text="Gender" />
+                <TableColumn fx:id="peopleTHair" prefWidth="103.0" text="Hair Color" />
+            <TableColumn prefWidth="98.0" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
