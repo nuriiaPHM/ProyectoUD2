@@ -26,6 +26,7 @@ import java.util.ResourceBundle;
 
 public class LocationController extends Controller implements Initializable {
 
+    public TableColumn locTDelete;
     private String locationURL = "https://ghibliapi.herokuapp.com/locations?terrain=";
     private ObservableList<Location> tableLocation;
 
@@ -67,6 +68,7 @@ public class LocationController extends Controller implements Initializable {
         this.locTClimate.setCellValueFactory(new PropertyValueFactory("climate"));
         this.locTTerrain.setCellValueFactory(new PropertyValueFactory("terrain"));
         this.locTWater.setCellValueFactory(new PropertyValueFactory("surfaceWater"));
+        this.locTDelete.setCellValueFactory(new PropertyValueFactory("delete"));
 
     }
 
@@ -90,8 +92,8 @@ public class LocationController extends Controller implements Initializable {
                 String terrain = rs.getString("terrain");
                 String water = rs.getString("water_surface");
 
-                Location location = new Location(id,nam,climate,terrain,water);
 
+                Location location = new Location(id,nam,climate,terrain,water,new Button("DELETE"));
                 tableLocation.add(location);
             }
             this.locTable.setItems(tableLocation);
@@ -167,5 +169,4 @@ public class LocationController extends Controller implements Initializable {
         System.out.println(results);
         return results;
     }
-
 }

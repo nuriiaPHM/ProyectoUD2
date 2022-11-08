@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apPeople" prefHeight="326.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/17.0.2-ea"  stylesheets="@../css/styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
+<AnchorPane fx:id="apPeople" prefHeight="326.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectoud1.controller.PeopleController">
     <children>
         <Button fx:id="peopleSearch" layoutX="249.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleSearch" text="Search" />
         <Label layoutX="27.0" layoutY="37.0" text="Gender:" />
@@ -26,9 +26,10 @@
                 <TableColumn fx:id="peopleTHair" prefWidth="103.0" text="Hair Color" />
             </columns>
         </TableView>
-      <Button fx:id="btnPeopleBack" layoutX="371.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleGoBack" text="Go Back" />
+      <Button fx:id="btnPeopleBack" layoutX="320.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleGoBack" text="Go Back" />
       <Button fx:id="btnSavePeople" layoutX="380.0" layoutY="279.0" mnemonicParsing="false" onAction="#peopleSave" text="Save" />
       <Label layoutX="54.0" layoutY="283.0" text="File name:" />
       <TextField fx:id="txtSave" layoutX="129.0" layoutY="279.0" prefHeight="25.0" prefWidth="222.0" />
+      <Button fx:id="btnDelete" layoutX="395.0" layoutY="33.0" mnemonicParsing="false" onAction="#peopleDelete" text="DELETE" />
     </children>
 </AnchorPane>

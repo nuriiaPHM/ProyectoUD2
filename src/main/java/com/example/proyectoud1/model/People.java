@@ -2,6 +2,7 @@ package com.example.proyectoud1.model;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import javafx.scene.control.Button;
 
 public class People {
 

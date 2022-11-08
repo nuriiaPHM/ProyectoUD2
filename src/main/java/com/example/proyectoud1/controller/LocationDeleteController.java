@@ -19,15 +19,15 @@ import java.sql.SQLException;
 public class LocationDeleteController extends Controller {
 
     @FXML
-    public Button btnPeopleInsert;
+    public Button btnLocationInsert;
     @FXML
     public TextField txtName;
     @FXML
-    public TextField txtAge;
+    public TextField txtClimate;
     @FXML
-    public ComboBox cboxGender;
+    public TextField txtTerrain;
     @FXML
-    public TextField txtHair;
+    public TextField txtWater;
     @FXML
     public Button btnGoBack;
     public Label lblMessage;
@@ -42,21 +42,22 @@ public class LocationDeleteController extends Controller {
         try (Connection con = DriverManager.getConnection(jdbcUrl, "root", "root")) {
 
             String name = txtName.getText();
-            String age = txtAge.getText();
-            String gender = cboxGender.getValue().toString();
-            String hair = txtHair.getText();
+            String climate = txtClimate.getText();
+            String terrain = txtTerrain.getText();
+            String water_surface = txtWater.getText();
 
-            String insert = "insert into characters (nam, age, gender, hair_color)" +
-                    "values ('"+name+"','"+age+"', '"+gender+"', '"+hair+"');";
+            String insert = "insert into locations (nam, climate, terrain, water_surface)" +
+                    "values ('"+name+"','"+climate+"', '"+terrain+"', '"+water_surface+"');";
 
             PreparedStatement ps = con.prepareStatement(insert);
             int n_insert = ps.executeUpdate();
 
-            lblMessage.setText("Character inserted: " + name);
+            lblMessage.setText("Location inserted: " + name);
 
             txtName.setText("");
-            txtAge.setText("");
-            txtHair.setText("");
+            txtClimate.setText("");
+            txtTerrain.setText("");
+            txtWater.setText("");
 
 
         } catch (SQLException e) {
