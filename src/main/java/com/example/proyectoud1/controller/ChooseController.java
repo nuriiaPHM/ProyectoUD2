@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 public class ChooseController extends Controller{
     public Button btnSelect;
     public Button btnInsert;
-    public Button btnDelete;
     public ToggleGroup btnGroup;
     public RadioButton btnCharacter;
     public RadioButton btnLocation;
@@ -94,41 +93,4 @@ public class ChooseController extends Controller{
         }
     }
 
-    public void delete(ActionEvent actionEvent) {
-        if (btnCharacter.isSelected()){
-            try {
-                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-                FXMLLoader loader = new FXMLLoader(Main.class.getResource("peopleDelete.fxml"));
-
-                PeopleDeleteController peopleDeleteController = loader.getController();
-
-                setScene(loader);
-                stage.setScene(scene);
-                stage.setTitle("Characters");
-                stage.show();
-
-                Stage myStage = (Stage) this.btnSelect.getScene().getWindow();
-
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        } else if (btnLocation.isSelected()){
-            try {
-                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-                FXMLLoader loader = new FXMLLoader(Main.class.getResource("locationDelete.fxml"));
-
-                LocationDeleteController locationDeleteController = loader.getController();
-
-                setScene(loader);
-                stage.setScene(scene);
-                stage.setTitle("Locations");
-                stage.show();
-
-                Stage myStage = (Stage) this.btnSelect.getScene().getWindow();
-
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        }
-    }
 }

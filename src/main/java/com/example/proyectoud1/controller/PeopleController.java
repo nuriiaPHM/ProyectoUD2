@@ -31,6 +31,7 @@ public class PeopleController extends Controller implements Initializable {
     public TextField txtSave;
     @FXML
     public ComboBox cboxGender;
+    public TableColumn tcDelete;
     @FXML
     private Button peopleSearch;
     @FXML
@@ -62,7 +63,7 @@ public class PeopleController extends Controller implements Initializable {
         this.peopleTAge.setCellValueFactory(new PropertyValueFactory("age"));
         this.peopleTGender.setCellValueFactory(new PropertyValueFactory("gender"));
         this.peopleTHair.setCellValueFactory(new PropertyValueFactory("hairColor"));
-
+        this.tcDelete.setCellValueFactory(new PropertyValueFactory("button"));
     }
 
     /**
@@ -85,7 +86,7 @@ public class PeopleController extends Controller implements Initializable {
                 String gender = rs.getString("gender");
                 String hair = rs.getString("hair_color");
 
-                People people = new People(id,nam,age,gender,hair);
+                People people = new People(id,nam,age,gender,hair, new Button("Delete"));
 
                 tablePeople.add(people);
             }
