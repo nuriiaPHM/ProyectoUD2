@@ -48,7 +48,7 @@ La clase Launcher se usa para ejecutar la clase Main y poder generar un JAR sin 
 
 CONTROLLER
 
-La clase Controller se usa para qeu todas las otras clases controler esxtiendan de ella y se puda usar la misma Stage en todas las ventanas pero con distintos Scene
+La clase Controller se usa para que todas las otras clases controller extiendan de ella y se puda usar la misma Stage en todas las ventanas pero con distintos Scene
 
 ![1 0](https://user-images.githubusercontent.com/105040856/195914358-bc647d75-4b69-47f1-9c62-b593969e253c.PNG)
 
@@ -57,12 +57,12 @@ MAIN
 En la clase Main empezamos en programa llamando a la vista main.fxml
 ![2_main](https://user-images.githubusercontent.com/105040856/195914594-a5e70ceb-82aa-4000-bcd7-88fccbf2c6b6.PNG)
 
-Cuando se hace clic en el boton People se carga una nueva pantalla que se usa para buscar personajes
+Cuando se hace clic en el botón People se carga una nueva pantalla que se usa para buscar personajes
 
 ![5_metodoSearchP](https://user-images.githubusercontent.com/105040856/195914700-c16229a0-379c-4c17-a155-8c1ef10d9d9c.PNG)
 
 
-Cuand se hace clic en el boton Locations se carga una nueva pantalla que se usa para guardar ubicaciones de las peliculas
+Cuando se hace clic en el botón Locations se carga una nueva pantalla que se usa para guardar ubicaciones de las peliculas
 
 ![6_metodoSearchL](https://user-images.githubusercontent.com/105040856/195914739-ad857406-6a51-411c-81c3-acad809cdca8.PNG)
 
