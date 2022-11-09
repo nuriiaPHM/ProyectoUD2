@@ -26,28 +26,32 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class PeopleController extends Controller implements Initializable {
+    /**
+     * JavaFX elements from people.fxml
+     */
 
     @FXML
     public TextField txtSave;
     @FXML
     public ComboBox cboxGender;
-    public TableColumn tcDelete;
     @FXML
-    private Button peopleSearch;
+    public Button peopleSearch;
     @FXML
-    private Button btnPeopleBack;
+    public Button btnPeopleBack;
     @FXML
-    private Button btnSavePeople;
+    public Button btnSavePeople;
     @FXML
-    private TableView peopleTable;
+    public TableView peopleTable;
     @FXML
     public TableColumn peopleTName;
     @FXML
-    private TableColumn peopleTAge;
+    public TableColumn peopleTAge;
     @FXML
-    private TableColumn peopleTGender;
+    public TableColumn peopleTGender;
     @FXML
-    private TableColumn peopleTHair;
+    public TableColumn peopleTHair;
+    @FXML
+    public TableColumn tcDelete;
 
     private ObservableList<People> tablePeople;
 
@@ -67,7 +71,7 @@ public class PeopleController extends Controller implements Initializable {
     }
 
     /**
-     * To search a gender in the API
+     * To search a character by its gender in the database
      * @param actionEvent The click in the button
      */
     @FXML
@@ -151,7 +155,7 @@ public class PeopleController extends Controller implements Initializable {
     }
 
     /**
-     * To get as string with the characters that the user searched
+     * To get a string with the characters that the user searched
      * @return A String written as a JSON of People
      */
     public String getResults(){

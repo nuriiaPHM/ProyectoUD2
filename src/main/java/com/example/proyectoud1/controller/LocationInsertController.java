@@ -12,23 +12,27 @@ import javafx.stage.Stage;
 import java.sql.*;
 
 public class LocationInsertController extends Controller {
+    /**
+     * JavaFX elements from locationInsert.fxml
+     */
+
+    @FXML
     public Button btnLocationInsert;
     @FXML
     public TextField txtName;
     @FXML
-    public TextField txtClimate;
-    @FXML
-    public TextField txtTerrain;
-    @FXML
     public TextField txtWater;
     @FXML
     public Button btnGoBack;
+    @FXML
     public Label lblMessage;
+    @FXML
     public ComboBox cboxClimate;
+    @FXML
     public ComboBox cboxTerrain;
 
     /**
-     * To search a gender in the API
+     * To insert a location in the database
      * @param actionEvent The click in the button
      */
     @FXML

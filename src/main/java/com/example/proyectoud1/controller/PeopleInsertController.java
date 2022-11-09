@@ -12,6 +12,9 @@ import javafx.stage.Stage;
 import java.sql.*;
 
 public class PeopleInsertController extends Controller {
+    /**
+     * JavaFX elements from peopleInsert.fxml
+     */
 
     @FXML
     public Button btnPeopleInsert;
@@ -25,10 +28,11 @@ public class PeopleInsertController extends Controller {
     public TextField txtHair;
     @FXML
     public Button btnGoBack;
+    @FXML
     public Label lblMessage;
 
     /**
-     * To search a gender in the API
+     * To insert a character in the database
      * @param actionEvent The click in the button
      */
     @FXML

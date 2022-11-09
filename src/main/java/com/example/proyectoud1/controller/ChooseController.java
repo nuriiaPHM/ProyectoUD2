@@ -2,6 +2,7 @@ package com.example.proyectoud1.controller;
 
 import com.example.proyectoud1.Main;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -10,12 +11,25 @@ import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 public class ChooseController extends Controller{
+    /**
+     * JavaFX elements from choose.fxml
+     */
+
+    @FXML
     public Button btnSelect;
+    @FXML
     public Button btnInsert;
+    @FXML
     public ToggleGroup btnGroup;
+    @FXML
     public RadioButton btnCharacter;
+    @FXML
     public RadioButton btnLocation;
 
+    /**
+     * Loads select window for characters or locations
+     * @param actionEvent The click in the button
+     */
     public void select(ActionEvent actionEvent) {
         if (btnCharacter.isSelected()){
             try {
@@ -55,6 +69,10 @@ public class ChooseController extends Controller{
 
     }
 
+    /**
+     * Loads insert window for characters or locations
+     * @param actionEvent The click in the button
+     */
     public void insert(ActionEvent actionEvent) {
         if (btnCharacter.isSelected()){
             try {

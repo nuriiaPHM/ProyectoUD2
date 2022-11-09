@@ -26,13 +26,10 @@ import java.util.ResourceBundle;
 
 public class LocationController extends Controller implements Initializable {
 
-    public TableColumn locTDelete;
-    private String locationURL = "https://ghibliapi.herokuapp.com/locations?terrain=";
-    private ObservableList<Location> tableLocation;
-
     /**
      * JavaFX elements from locations.fxml
      */
+
     @FXML
     public TableView locTable;
     @FXML
@@ -44,7 +41,7 @@ public class LocationController extends Controller implements Initializable {
     @FXML
     public TableColumn locTName;
     @FXML
-    public TextField locName;
+    public TableColumn locTDelete;
     @FXML
     public Button locSearch;
     @FXML
@@ -55,6 +52,8 @@ public class LocationController extends Controller implements Initializable {
     public TextField txtLocSave;
     @FXML
     public ComboBox cboxTerrain;
+
+    private ObservableList<Location> tableLocation;
 
     /**
      * To set an attribute of locations in each column of the table
@@ -73,7 +72,7 @@ public class LocationController extends Controller implements Initializable {
     }
 
     /**
-     *  To search the terrain in the API
+     *  To search the location by its terrain in the database
      * @param actionEvent The click in the button
      */
     @FXML
@@ -142,7 +141,7 @@ public class LocationController extends Controller implements Initializable {
     }
 
     /**
-     * To save the Locations that the user has searched
+     * To save the locations that the user has searched
      * @param actionEvent The click in the button
      */
     public void locSave(ActionEvent actionEvent) {
@@ -158,7 +157,7 @@ public class LocationController extends Controller implements Initializable {
     }
 
     /**
-     * To get as string with the locations that the user has searched
+     * To get a string with the locations that the user has searched
      * @return A String in written as a JSON of Locations
      */
     public String getResults(){
