@@ -5,6 +5,7 @@ INTRODUCCIÓN:
 Nuestro programa permite realizar consultas a una pequeña base de datos de personajes y localizaciones de Studio Ghibli, así como guardar los resultados de las búsquedas en un fichero. Nuestra base de datos consta de dos tablas, una de personajes y otra de localizaciones
 
 ![bdCharacters](https://user-images.githubusercontent.com/105040658/200899023-06c4885d-9486-4b02-9c42-02257fd87f28.PNG)
+
 ![bdLocations](https://user-images.githubusercontent.com/105040658/200899041-24b47e44-362d-4b0a-a87e-2bbb14415780.PNG)
 
 
@@ -133,7 +134,7 @@ Como posibles mejoras podríamos implementar una nueva consulta para actualizar 
 
 OPINIÓN:
 
-Nuria: Bajo mi punto de vista este proyecto ha sido interesante, pero creo que nos hubiese venido bien alguna explicación previa más para agilizar el trabajo, ya que en muchas ocasiones nos atascamos porque no sabíamos como funcionaban ciertas clases o metodos que debíamos implementar.
+Nuria: Creo que este proyecto realmente nos ha ayudado a entender como realizar conexiones con las bases de datos. A pesar de tener menos tiempo que el anterior proyecto, el hecho de no partir de cero y tener la base ya hecha también nos ayudó a centrarnos más en esta parte.
 
 
 Uxía: En mi opinión el proyecto ha venido bien para aprender algo sobre el Jackson y en algunos puntos si que me he quedado con ellos, pero en otros sigo muy confundida. También estoy de acuerdo con mi compañera de que hubiera estado bien una explicación sobre que se podía hacer con el Jackson y como se usa, para asi poder evitar algunos de los errores que nos dieron y nos pillaron por sorpresa, perdiendo horas, al no saber como arreglarlos, de desarrollo del programa y de poder hacer también los extras.
