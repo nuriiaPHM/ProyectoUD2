@@ -178,5 +178,4 @@ OPINIÓN:
 Nuria: Creo que este proyecto realmente nos ha ayudado a entender como realizar conexiones con las bases de datos. A pesar de tener menos tiempo que el anterior proyecto, el hecho de no partir de cero y tener la base ya hecha también nos ayudó a centrarnos más en esta parte.
 
 
-Uxía: 
-
+Uxía: Al haber hecgho ya el anterior proyecto, y teniendo ya uan base anterior gracias a primero y el repaso que hicimos en clase, fue más fácil entender lo que se pedía para entregar. Este proyecto ha ayudado a asentar conceptos que quedaban sueltos o que no se habian acabado de entender del todo.
