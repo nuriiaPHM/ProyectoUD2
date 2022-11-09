@@ -1,36 +1,40 @@
-# proyectoud1-uxia-nuria
+# Proyecto UD2 Uxia y Nuria
 
 INTRODUCCIÓN:
 
-Nuestro programa permite realizar consultas a la API de Studio Ghibli de personajes y localizaciones, así como guardar los resultados de las búsquedas en un fichero. La API de Studio Ghibli contiene información sobre su universo con diferentes categorías. Además de las que utilizamos nosotras tiene otras tres categorías de películas, especies y vehículos.
+Nuestro programa permite realizar consultas a una pequeña base de datos de personajes y localizaciones de Studio Ghibli, así como guardar los resultados de las búsquedas en un fichero. Nuestra base de datos consta de dos tablas, una de personajes y otra de localizaciones
 
-![PostmanFilms](https://user-images.githubusercontent.com/105040658/195904073-d81625d5-c73b-48e6-9453-4321dc06242c.PNG)
-![PostmanLocations](https://user-images.githubusercontent.com/105040658/195904079-75c403e5-2700-4bce-b2db-8f311fa01fbc.PNG)
-![PostmanPeople](https://user-images.githubusercontent.com/105040658/195904083-075c661b-33f2-4737-bc74-7a4a45e8a1ee.PNG)
+![bdCharacters](https://user-images.githubusercontent.com/105040658/200899023-06c4885d-9486-4b02-9c42-02257fd87f28.PNG)
+![bdLocations](https://user-images.githubusercontent.com/105040658/200899041-24b47e44-362d-4b0a-a87e-2bbb14415780.PNG)
 
 
 MANUAL DE USO:
 
-Al iniciar el programa veremos esta pantalla donde podremos elegir sobre qué categoría queremos hacer la búsqueda.
+Al iniciar el programa veremos esta ventana donde podremos elegir sobre qué tabla hacer la consulta y qué consulta queremos hacer.
 
-![Main](https://user-images.githubusercontent.com/105040658/195904339-9114cdcd-e794-4a1d-b3bb-7ddfbba5d8ee.PNG)
+![main](https://user-images.githubusercontent.com/105040658/200899812-618a1ea1-f385-464b-be4b-6ac285fe387d.PNG)
 
-Cuando pulsamos los botones se abrirán las correspondientes ventanas de búsqueda.
+Cuando pulsamos los botones se abrirán las correspondientes ventanas dependiendo de la tabla que esté marcada.
 
-En la ventana Characters podemos seleccionar un género y al pulsar el botón 'Search' nos mostrará todos los personajes de ese género en la tabla de abajo, así como su nombre, edad y color de pelo.
+En la ventana de búsqueda de personajes podremos consultar los personajes registrados en la base de datos en función de su género, el cual podremos elegir en el desplegable de la parte superior. También podemos ver un botón que pone 'DELETE' al lado de cada personaje. Al pulsarlo borraremos a ese personaje de la base de datos.
 
-![CharactersVacia](https://user-images.githubusercontent.com/105040658/195904414-91f8f16f-e9a9-4711-87ae-e654d3d67fea.PNG)
+![searchCharacter](https://user-images.githubusercontent.com/105040658/200900412-60a8f915-fe42-4101-9907-adebd6a8e832.PNG)
 
-![CharactersDatos](https://user-images.githubusercontent.com/105040658/195904419-e449b06e-1aad-4892-82bd-75d5c3f1072b.PNG)
+La ventana de búsqueda de localizaciones funciona de la misma manera que la de personajes, permitiendonos buscar una localización por el tipo de terreno que podemos elegir en el deplegable y borrarlas con sus respectivos botobes 'DELETE'.
 
+![searchLocation](https://user-images.githubusercontent.com/105040658/200901215-d54aa39e-d159-40f7-bb8d-b940ca237bca.PNG)
 
-La ventana Locations funciona del mismo modo que Characters, tendremos que seleccionarun tipo de terreno y al pulsar 'Search' nos mostrará en la tabla todas las localizaciones de ese tipo junto con el nombre de cada una, el tipo de clima y la superficie de agua que tienen.
+En ambas ventanas nos encontraremos además con el botón 'Go Back', que nos llevará de vuelta a la ventana de inicio por si queremos hacer otra consulta, y en la parte inferior tenemos un cuadro de texto en el que podremos introducir un nombre para el fichero donde, al pulsar el botón 'Save', se guardarán los datos de la última búsqueda que hayamos hecho en formato .json .
 
-![LocationVacia](https://user-images.githubusercontent.com/105040658/195904813-4b8bcb5b-d9b6-4558-ba7a-f06493b6fe16.PNG)
+En el caso de la ventana de añadir personajes nos encontraremos con los campos de texto que tendremos que rellenar para añadir al personaje. Cuando acabemos de introducir sus datos y pulsamos el botón 'INSERT' nos saldrá un mensaje conforme se ha añadido al nuevo personaje. Si no aparece el mensaje significa que alguno de los datos no es correcto y el personaje no se añadirá.
 
-![LocationDatos](https://user-images.githubusercontent.com/105040658/195904824-c951c2eb-f03d-4163-b316-12f802538149.PNG)
+![addCharacter](https://user-images.githubusercontent.com/105040658/200902013-a5ae1cef-b2ba-4c19-aa91-72121e329751.PNG)
 
-En ambas ventanas nos encontraremos además con el botón 'Go Back', que nos llevará de vuelta a la ventana de inicio por si queremos hacer otra búsqueda en otra categoría, y en la parte inferior tenemos un cuadro de texto en el que podremos introducir un nombre para el fichero donde, al pulsar el botón 'Save', se guardarán los datos de la última búsqueda que hayamos hecho en formato .json .
+Y de la misma manera funciona la ventana de añadir localizaciones.
+
+![addLocation](https://user-images.githubusercontent.com/105040658/200902160-adb66ef5-4f62-4ad1-8d57-c3f61b8d83d7.PNG)
+
+Y en esta caso ambas ventanas cuentan también con el boton 'Go Back' que nos permitirá volver al inicio.
 
 
 MANUAL DE DESARROLADOR:
@@ -52,7 +56,7 @@ MAIN
 En la clase Main empezamos en programa llamando a la vista main.fxml
 ![2_main](https://user-images.githubusercontent.com/105040856/195914594-a5e70ceb-82aa-4000-bcd7-88fccbf2c6b6.PNG)
 
-Cuand se hace clic en el boton People se carga una nueva pantalla que se usa para buscar personajes
+Cuando se hace clic en el boton People se carga una nueva pantalla que se usa para buscar personajes
 
 ![5_metodoSearchP](https://user-images.githubusercontent.com/105040856/195914700-c16229a0-379c-4c17-a155-8c1ef10d9d9c.PNG)
 
@@ -113,19 +117,19 @@ Genera un fichero .json a partir del String que obtenga del método getResults()
 REPARTO DE TAREAS:
 
 Nuria:
-Consultas a la API, diseño de las interfaces
+Consultas a la tabla characters y navegación entre ventanas
 
 Uxía:
-Exportación de los datos, navegación entre ventanas
+Consultas a la tabla locations y diseño de las interfaces
 
 Ambas:
 Documentación
 
 EXTRAS:
-He implementado el control de errores de manera que el programa sea lo más robusto posible y que funcione sin problemas. El único requisito es tener una conexión a internet para poder consultar la API.
+Hemos implementado el control de errores de manera que el programa sea lo más robusto posible y que funcione sin problemas.
 
 MEJORAS:
-Como posibles mejoras podríamos implementar alguna de las categorías que no hemos utilizado o añadir más filtros de búsqueda
+Como posibles mejoras podríamos implementar una nueva consulta para actualizar los datos de alguno de los personajes/localizaciones ya existentes.
 
 OPINIÓN:
 
