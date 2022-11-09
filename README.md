@@ -2,7 +2,7 @@
 
 INTRODUCCIÓN:
 
-Nuestro programa permite realizar consultas a una pequeña base de datos de personajes y localizaciones de Studio Ghibli, así como guardar los resultados de las búsquedas en un fichero. Nuestra base de datos consta de dos tablas, una de personajes y otra de localizaciones
+Nuestro programa permite realizar consultas a una pequeña base de datos de personajes y localizaciones del mundo de Studio Ghibli, así como guardar los resultados de las búsquedas en un fichero en formato json. Nuestra base de datos consta de dos tablas, una de personajes y otra de localizaciones.
 
 ![bdCharacters](https://user-images.githubusercontent.com/105040658/200899023-06c4885d-9486-4b02-9c42-02257fd87f28.PNG)
 
@@ -40,79 +40,115 @@ Y en esta caso ambas ventanas cuentan también con el boton 'Go Back' que nos pe
 
 MANUAL DE DESARROLADOR:
 
-LAUNCHER:
+LAUNCHER
 
 La clase Launcher se usa para ejecutar la clase Main y poder generar un JAR sin problema
 
-![1_launcher](https://user-images.githubusercontent.com/105040856/195914482-1dc6a25f-b6d8-419b-99f6-66f7ea49f00e.PNG)
+![1_Launcher](https://user-images.githubusercontent.com/105040658/200929682-28ff8c3c-d309-443a-99a1-6bbd6c179449.PNG)
+
+
+MAIN
+La clase Main es la que lanza la aplicación llamando a la vista choose.xml
+
+![2_Main](https://user-images.githubusercontent.com/105040658/200930390-6c9339bc-f424-4ccb-9b08-9b58ddb25b1b.PNG)
+
 
 CONTROLLER
 
-La clase Controller se usa para que todas las otras clases controller extiendan de ella y se puda usar la misma Stage en todas las ventanas pero con distintos Scene
+La clase Controller se usa para que todas las otras clases controller extiendan de ella y se pueda usar la misma Stage en todas las ventanas pero con distintos Scene.
 
-![1 0](https://user-images.githubusercontent.com/105040856/195914358-bc647d75-4b69-47f1-9c62-b593969e253c.PNG)
+![3_ControllerSetScene](https://user-images.githubusercontent.com/105040658/200930424-4b224a65-1280-466b-97f6-adadc94304ef.PNG)
 
-MAIN
+También contiene el enlace con la base de datos que usarán todos los demás controladores.
 
-En la clase Main empezamos en programa llamando a la vista main.fxml
-![2_main](https://user-images.githubusercontent.com/105040856/195914594-a5e70ceb-82aa-4000-bcd7-88fccbf2c6b6.PNG)
-
-Cuando se hace clic en el botón People se carga una nueva pantalla que se usa para buscar personajes
-
-![5_metodoSearchP](https://user-images.githubusercontent.com/105040856/195914700-c16229a0-379c-4c17-a155-8c1ef10d9d9c.PNG)
+![3_ControllerURL](https://user-images.githubusercontent.com/105040658/200930606-0a8fcf52-3e56-4f8f-8476-4939065fb79e.PNG)
 
 
-Cuando se hace clic en el botón Locations se carga una nueva pantalla que se usa para guardar ubicaciones de las peliculas
+CHOOSE
 
-![6_metodoSearchL](https://user-images.githubusercontent.com/105040856/195914739-ad857406-6a51-411c-81c3-acad809cdca8.PNG)
+En esta clase gestionamos el menú principal.
 
-LOCATIONS
+Lanza las ventanas de búsqueda de personajes o localizaciones dependiendo de qué radio button esté seleccionado al pulsar el botón Search
 
-Le indica a cada columna de la tabla de qué atributo de Locations tiene que obtener su valor una vez se añada un objeto a la tabla.
+![7_ChooseSelect](https://user-images.githubusercontent.com/105040658/200931143-227d41ba-1194-4879-abda-f3392364a7a8.PNG)
 
-![10_internaliceLC_true](https://user-images.githubusercontent.com/105040856/195915014-8bc1c23c-7a30-4c4d-88aa-b22a95daf5d1.PNG)
+Lanza las ventanas de inserción de personajes o localizaciones dependiendo de qué radio button esté seleccionado al pulsar el botón Add New
 
-Genera una url para hacer una consulta a la API y mete los resultados en una lista para añadirlos a la tabla.
-
-![11_metodoSearchLC_true](https://user-images.githubusercontent.com/105040856/195915029-601f9e3f-1e3c-44fc-bc41-70846fb4df16.PNG)
-
-Crea una nueva instancia del MainController, pasándole el controlador actual para que se pueda visualizar correctamente.
-
-![12_metodoGoBackLC_true](https://user-images.githubusercontent.com/105040856/195915046-58a2e955-379a-4a1b-a559-027870699a01.PNG)
-
-Crea y devuelve un String a partir del contenido de tableLocation, que será el resultado de la búsqueda
-
-![13_metodogetResultsLC_true](https://user-images.githubusercontent.com/105040856/195915064-3a84c3cf-5990-4e92-aab9-2dc9420c3fa1.PNG)
-
-Genera un fichero .json a partir del String que obtenga del método getResults()
-
-![13_metodoSaVeLC_true](https://user-images.githubusercontent.com/105040856/195915085-ad996336-9766-42c3-8f5d-4caa19ff1a62.PNG)
-
-PEOPLE:
-
-Le indica a cada columna de la tabla de qué atributo de People tiene que obtener su valor una vez se añada un objeto a la tabla.
-
-![10_internaliceLC](https://user-images.githubusercontent.com/105040856/195915281-3b2335ad-1110-4677-870c-267f40ce479d.PNG)
+![8_ChooseInsert](https://user-images.githubusercontent.com/105040658/200931330-57243422-066d-4394-8822-19f534d2b5a5.PNG)
 
 
-Genera una url para hacer una consulta a la API y mete los resultados en una lista para añadirlos a la tabla.
+PEOPLE
 
-![11_metodoSearchLC](https://user-images.githubusercontent.com/105040856/195915305-97654b36-e9a2-4029-9b74-c40a70691897.PNG)
+La clase People tendrá un constructor de personajes con todos sus atributos, así como getters de los mismos.
 
-
-Crea una nueva instancia del MainController, pasándole el controlador actual para que se pueda visualizar correctamente.
-
-![12_metodoGoBackLC](https://user-images.githubusercontent.com/105040856/195915328-2930c4c6-f65d-40c1-bb8c-43a6cd164ae3.PNG)
+![5_People](https://user-images.githubusercontent.com/105040658/200932861-fcacfb6e-3f4c-4009-9788-2344ac34e235.PNG)
 
 
-Crea y devuelve un String a partir del contenido de tablePeople, que será el resultado de la búsqueda
+En la clase PeopleController gestionamos las búsquedas y borrados de personajes con la interfaz people.fxml
 
-![13_metodogetResultsLC](https://user-images.githubusercontent.com/105040856/195915348-a0fc3f16-7075-48c5-9adf-9852ca75a514.PNG)
+Asocia las atributos de los personajes con las columnas de la tabla.
+
+![9_PeopleInitialize](https://user-images.githubusercontent.com/105040658/200933556-589752a1-919e-4382-a4e7-dde743ef5cb3.PNG)
+
+Realiza select a la tabla characters de la base de datos, creando a cada personaje con su respectivo botón delete, que al pulsar ejecutará un delete de ese personaje.
+
+![10_peopleSearch](https://user-images.githubusercontent.com/105040658/200934196-13f1e224-18fc-41e0-8aa7-71e1ddaa20ab.PNG)
+
+Vuelve a la ventana choose
+
+![11_peopleGoBack](https://user-images.githubusercontent.com/105040658/200934663-1432f7e4-9058-49a2-88e9-9e43d0b060d2.PNG)
+
+Guarda el contenido de getResult() en un fichero .json
+
+![12_peopleSave](https://user-images.githubusercontent.com/105040658/200934828-d261ae60-968e-4099-ae2a-76302ca39cbf.PNG)
+
+Genera un String con el contenido de la tabla en formato json
+
+![13_peopleToString](https://user-images.githubusercontent.com/105040658/200934958-98dcaeb5-9289-41c8-876c-c73bfcacddbc.PNG)
 
 
-Genera un fichero .json a partir del String que obtenga del método getResults()
+En la clase PeopleInsertController gestionamos las inserciones de personajes en la base de datos
 
-![13_metodoSaVeLC](https://user-images.githubusercontent.com/105040856/195915358-16b00627-2680-421b-8035-8efe8974a662.PNG)
+Ejecuta un insert en la tabla characters de la base de datos con el contenido de los cuadros de texto de la interfaz.
+
+![14_peopleInsert](https://user-images.githubusercontent.com/105040658/200935080-ae69dbf1-2ab4-4ba6-8187-1ddbe5f24116.PNG)
+
+
+LOCATION
+
+La clase Location tendrá un constructor de localizaciones con todos sus atributos, así como getters de los mismos.
+
+![6_Locations](https://user-images.githubusercontent.com/105040658/200935563-0694dfaf-8991-441c-9e5a-9e061d2cc18f.PNG)
+
+
+En la clase LocationController gestionamos las búsquedas y borrados de localizaciones con la interfaz locations.fxml
+
+Asocia las atributos de las localizaciones con las columnas de la tabla.
+
+![15_locInit](https://user-images.githubusercontent.com/105040658/200935740-392e0609-0eb5-4093-b5d6-5a1620199a29.PNG)
+
+Realiza select a la tabla locations de la base de datos, creando a cada localización con su respectivo botón delete, que al pulsar ejecutará un delete de esa localización.
+
+![16_loccSearch](https://user-images.githubusercontent.com/105040658/200935850-229a457b-00f2-45b0-aabc-5c66fe9d9991.PNG)
+
+Vuelve a la ventana choose
+
+![17_locGoBack](https://user-images.githubusercontent.com/105040658/200935875-2ded823d-6ced-4c60-b1e1-d85a816f6861.PNG)
+
+Guarda el contenido de getResult() en un fichero .json
+
+![locSave](https://user-images.githubusercontent.com/105040658/200935921-a874dab4-e724-4129-90b6-4bfe8e74d38c.PNG)
+
+Genera un String con el contenido de la tabla en formato json
+
+![18_locResult](https://user-images.githubusercontent.com/105040658/200935966-0ce7fadc-5d6a-4577-9aa3-f53e59bdd663.PNG)
+
+
+En la clase LocationInsertController gestionamos las inserciones de localizaciones en la base de datos
+
+Ejecuta un insert en la tabla locations de la base de datos con el contenido de los cuadros de texto de la interfaz.
+
+![locInsert](https://user-images.githubusercontent.com/105040658/200936089-cb318e49-9c89-4317-90f9-d2a4a0cf6d4d.PNG)
 
 
 REPARTO DE TAREAS:
@@ -126,16 +162,21 @@ Consultas a la tabla locations y diseño de las interfaces
 Ambas:
 Documentación
 
+
 EXTRAS:
+
 Hemos implementado el control de errores de manera que el programa sea lo más robusto posible y que funcione sin problemas.
 
+
 MEJORAS:
-Como posibles mejoras podríamos implementar una nueva consulta para actualizar los datos de alguno de los personajes/localizaciones ya existentes.
+
+Como posibles mejoras podríamos implementar un nuevo tipo de consulta para actualizar los datos de alguno de los personajes/localizaciones ya existentes.
+
 
 OPINIÓN:
 
 Nuria: Creo que este proyecto realmente nos ha ayudado a entender como realizar conexiones con las bases de datos. A pesar de tener menos tiempo que el anterior proyecto, el hecho de no partir de cero y tener la base ya hecha también nos ayudó a centrarnos más en esta parte.
 
 
-Uxía: En mi opinión el proyecto ha venido bien para aprender algo sobre el Jackson y en algunos puntos si que me he quedado con ellos, pero en otros sigo muy confundida. También estoy de acuerdo con mi compañera de que hubiera estado bien una explicación sobre que se podía hacer con el Jackson y como se usa, para asi poder evitar algunos de los errores que nos dieron y nos pillaron por sorpresa, perdiendo horas, al no saber como arreglarlos, de desarrollo del programa y de poder hacer también los extras.
+Uxía: 
 
